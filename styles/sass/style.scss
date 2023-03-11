@@ -1,0 +1,13 @@
+@use "./variables";
+
+@use "./base/globalStyle";
+@use "./base/typography";
+
+@use "./components/contactForm";
+@use "./components/nav";
+
+@use "./layout/header";
+@use "./layout/about";
+@use "./layout/skills";
+@use "./layout/projects";
+@use "./layout/contact";

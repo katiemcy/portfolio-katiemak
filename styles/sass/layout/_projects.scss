@@ -1,0 +1,16 @@
+@use "../variables" as *;
+
+section.projects {
+    height: 100vh;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        li {
+            width: 45%;
+            border: 1px solid black;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use "../variables" as *;
+
+section.about {
+    min-height: 100vh;
+    padding: 50px 0;
+
+    figure {
+        margin: 60px auto 40px auto;
+    }
+}
+
+div.aboutMeDiv {
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: $borderGrey;
+    padding: 15px 0;
+}
