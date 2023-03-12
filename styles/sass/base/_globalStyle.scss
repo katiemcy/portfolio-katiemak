@@ -36,6 +36,11 @@ img {
 
 a {
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: black;
+    }
 }
 
 .wrapper {

@@ -21,20 +21,40 @@ div.headerFlex {
     align-items: center;
 }
 
-figure.profilePic {
-    width: 250px;
-    min-width: 250px;
-    margin-right: 40px;
+div.profilePic {
+    background-image: url(../media/thumbnail_IMG_6200.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 230px;
+    min-width: 230px;
+    height: 230px;
+    min-height: 230px;
+    margin-right: 50px;
+    border: 10px solid;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    animation: morph 8s ease-in-out infinite 1s;
 
     &:after {
         padding-bottom: 100%;
     }
 }
+ @keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }  
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+ }
 
 // mousey animation
 .scroll-downs {
     position: absolute;
-    bottom: -7px;
+    bottom: -1px;
     left: 50%;
     margin: auto;
     width : 34px;
@@ -56,7 +76,7 @@ figure.profilePic {
   @keyframes flash {
     0% { opacity: 0; }
     40% { transform: translateY(0); opacity: 0.8; }
-    80% { transform: translateY(10px); opacity: 0; }
+    80% { transform: translateY(18px); opacity: 0; }
     100% { opacity: 0; }
   }
 .scroller {
@@ -72,5 +92,5 @@ figure.profilePic {
   @keyframes scroll {
     0% { opacity: 0; }
     40% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(10px); opacity: 0;}
+    100% { transform: translateY(18px); opacity: 0;}
   }

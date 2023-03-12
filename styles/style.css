@@ -256,6 +256,9 @@ img {
 a {
   text-decoration: none;
 }
+a:hover, a:focus {
+  color: black;
+}
 
 .wrapper {
   height: 100%;
@@ -325,11 +328,6 @@ input,
 textarea {
   font-size: 0.8rem;
   font-family: "Montserrat", sans-serif;
-}
-
-button {
-  font-size: 0.8rem;
-  font-family: "Mulish", sans-serif;
 }
 
 form.contactForm {
@@ -423,18 +421,51 @@ div.headerFlex {
           align-items: center;
 }
 
-figure.profilePic {
-  width: 250px;
-  min-width: 250px;
-  margin-right: 40px;
+div.profilePic {
+  background-image: url(../media/thumbnail_IMG_6200.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 230px;
+  min-width: 230px;
+  height: 230px;
+  min-height: 230px;
+  margin-right: 50px;
+  border: 10px solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  -webkit-animation: morph 8s ease-in-out infinite 1s;
+          animation: morph 8s ease-in-out infinite 1s;
 }
-figure.profilePic:after {
+div.profilePic:after {
   padding-bottom: 100%;
 }
 
+@-webkit-keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
 .scroll-downs {
   position: absolute;
-  bottom: -7px;
+  bottom: -1px;
   left: 50%;
   margin: auto;
   width: 34px;
@@ -470,8 +501,8 @@ figure.profilePic:after {
     opacity: 0.8;
   }
   80% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(18px);
+            transform: translateY(18px);
     opacity: 0;
   }
   100% {
@@ -489,8 +520,8 @@ figure.profilePic:after {
     opacity: 0.8;
   }
   80% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(18px);
+            transform: translateY(18px);
     opacity: 0;
   }
   100% {
@@ -522,8 +553,8 @@ figure.profilePic:after {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(18px);
+            transform: translateY(18px);
     opacity: 0;
   }
 }
@@ -538,8 +569,8 @@ figure.profilePic:after {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(18px);
+            transform: translateY(18px);
     opacity: 0;
   }
 }
@@ -571,7 +602,7 @@ section.skills ul i {
 }
 
 section.projects {
-  height: 100vh;
+  min-height: 100vh;
 }
 section.projects ul {
   display: -webkit-box;
@@ -579,11 +610,21 @@ section.projects ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 section.projects ul li {
-  width: 45%;
-  border: 1px solid black;
+  width: 48%;
+  margin: 30px 0;
+}
+section.projects ul li h4,
+section.projects ul li p {
+  padding-left: 3px;
+}
+
+video {
+  width: 100%;
 }
 
 section.contact {
@@ -591,7 +632,7 @@ section.contact {
 }
 
 div.contactBanner {
-  background-image: url(../images/contact_banner.jpg);
+  background-image: url(../media/contact_banner.jpg);
   background-position: center;
   background-size: cover;
   height: 30%;
