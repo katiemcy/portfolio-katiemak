@@ -1,8 +1,14 @@
 @use "../variables" as *;
 
-div.introFlex {
+div.introFlexRow {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+div.introFlexCol {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 header {
