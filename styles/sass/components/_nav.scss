@@ -1,4 +1,4 @@
-div.navDivFlex {
+div.navDiv {
     position: sticky;
     top: 0;
     width: 25%;
@@ -7,6 +7,15 @@ div.navDivFlex {
     justify-content: center;
     align-items: center;
     background-color: white;
+    transition: 1s;
+}
+@keyframes shrink{
+    0% {
+        clip-path: inset(0)
+    }
+    100% {
+        clip-path: inset(0 0 90% 0)
+    }
 }
 
 // triggered by scrolling
@@ -14,7 +23,8 @@ nav.navFlexRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
-        
+    animation: expand 1s ease-in-out 1; 
+
     ul {
         display: flex;
         margin: 0;
@@ -23,6 +33,10 @@ nav.navFlexRow {
             margin: 0 20px;
         }
     }
+}
+@keyframes expand {
+    0% { width: 10% }
+    100% { width: 100% }
 }
 // **************************
 

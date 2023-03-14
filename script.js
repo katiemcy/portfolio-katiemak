@@ -2,17 +2,26 @@ const html = document.documentElement;
 
 const stickyViewDiv = document.querySelector('.stickyView');
 
-const navContainer = document.querySelector('#navFlex');
-const introContainer = document.querySelector('#introFlex');
-const navWrap = document.querySelector('.navWrap')
+const navFlex = document.querySelector('#navFlex');
+const introFlex = document.querySelector('#introFlex');
+const navWrap = document.querySelector('.navWrap');
 
 const header = document.querySelector('header');
 const nav = document.querySelector('nav');
 const footer = document.querySelector('footer');
 
+
+
+
+let animationFlag = true;
+
 function roundAsPercentString (num) {
     const roundedWidth = num.toFixed(2);
     return roundedWidth + "%";
+}
+
+function addAnimation (element, animation) {
+    element.style.animation = animation
 }
 
 window.addEventListener('scroll', () => {
@@ -20,28 +29,52 @@ window.addEventListener('scroll', () => {
     const maxScrollTop = stickyViewDiv.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / maxScrollTop;
     console.log(scrollFraction);
+    console.log(animationFlag);
 
-    if(scrollFraction >= 0.39) {
-        introContainer.classList = ["introFlexCol sticky"];
-        nav.classList = ["navFlexRow"];
+    const navWidth = 0.25 * (1 - scrollFraction) * 100;
+    const headerWidth = 0.75 * (1 + scrollFraction) * 100;
 
-        navContainer.style.width = "100%";
-        navWrap.style.width = "85%";
+    if(scrollFraction <= 0.39) {
 
-        footer.style.display = "none";
-    } else {
-        introContainer.classList = ["introFlexRow sticky"];
-        nav.classList =[""];
-            
-        const navWidth = 0.25 * (1 - scrollFraction) * 100;
-        const headerWidth = 0.75 * (1 + scrollFraction) * 100;
-    
-        navContainer.style.width = roundAsPercentString(navWidth);
-        header.style.width = roundAsPercentString(headerWidth);
+        navFlex.style.width = roundAsPercentString(navWidth);
 
-        navContainer.style.width = "25%";
+        if (headerWidth < 100) {
+            header.style.width = roundAsPercentString(headerWidth);
+        } else {
+            header.style.width = "100%"
+        }
+
+        if (animationFlag === false) {
+            animationFlag = true
+
+            nav.classList.remove("navFlexRow");
+            introFlex.classList.replace( "introFlexCol", "introFlexRow");
+        };
+
+        navFlex.style.width = "25%";
         navWrap.style.width = "60%";
 
-        footer.style.display = "none";
+        footer.style.display = "block";
+            
+    } else {
+        
+        if (animationFlag) {
+            animationFlag = false;
+            
+            addAnimation(navFlex, "shrink ease-in-out 1s");
+            
+            setTimeout(() => {
+                footer.style.display = "none";
+                
+                nav.classList.add("navFlexRow");
+                introFlex.classList.replace("introFlexRow", "introFlexCol");
+                
+                addAnimation(navFlex, "expand ease-in-out 1s")
+
+                navFlex.style.width = "100%";
+                navWrap.style.width = "85%";
+
+            }, 100)
+        }
     }
 })
