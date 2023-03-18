@@ -2,18 +2,19 @@ const html = document.documentElement;
 
 const stickyViewDiv = document.querySelector('.stickyView');
 
-const navFlex = document.querySelector('#navFlex');
+const navDiv = document.querySelector('.navDiv');
 const introFlex = document.querySelector('#introFlex');
 const navWrap = document.querySelector('.navWrap');
 
 const header = document.querySelector('header');
 const nav = document.querySelector('nav');
 const footer = document.querySelector('footer');
+const aside = document.querySelector('aside');
+const navH2 = document.querySelector('.navH2');
 
+const sectionAbout = document.querySelector('.about');
 
-
-
-let animationFlag = true;
+let animationFlag;
 
 function roundAsPercentString (num) {
     const roundedWidth = num.toFixed(2);
@@ -24,19 +25,31 @@ function addAnimation (element, animation) {
     element.style.animation = animation
 }
 
+if (!navDiv.style.width) {
+    aside.style.height = "0";
+} else {
+    aside.style.height = "65px";
+}
+
+
 window.addEventListener('scroll', () => {
-    const scrollTop = html.scrollTop;
+    const scrollPosition = html.scrollTop;
     const maxScrollTop = stickyViewDiv.scrollHeight - window.innerHeight;
-    const scrollFraction = scrollTop / maxScrollTop;
+    const scrollFraction = scrollPosition / maxScrollTop;
+
     console.log(scrollFraction);
     console.log(animationFlag);
 
-    const navWidth = 0.25 * (1 - scrollFraction) * 100;
-    const headerWidth = 0.75 * (1 + scrollFraction) * 100;
+    const navWidth = 0.3 * (1 - scrollFraction / 10) * 100;
+    const headerWidth = 0.7 * (1 + scrollFraction) * 100;
 
+    
     if(scrollFraction <= 0.39) {
-
-        navFlex.style.width = roundAsPercentString(navWidth);
+        animationFlag = true;
+        
+        navDiv.style.width = roundAsPercentString(navWidth);
+        aside.style.height = "0";
+        navH2.style.opacity = "1";
 
         if (headerWidth < 100) {
             header.style.width = roundAsPercentString(headerWidth);
@@ -46,35 +59,22 @@ window.addEventListener('scroll', () => {
 
         if (animationFlag === false) {
             animationFlag = true
-
-            nav.classList.remove("navFlexRow");
-            introFlex.classList.replace( "introFlexCol", "introFlexRow");
         };
-
-        navFlex.style.width = "25%";
-        navWrap.style.width = "60%";
 
         footer.style.display = "block";
             
     } else {
-        
+        animationFlag = false;
+
+        navDiv.style.width = "0";
+        aside.style.height = "65px";
+        navH2.style.opacity = "0";
+
         if (animationFlag) {
             animationFlag = false;
             
-            addAnimation(navFlex, "shrink ease-in-out 1s");
             
-            setTimeout(() => {
-                footer.style.display = "none";
-                
-                nav.classList.add("navFlexRow");
-                introFlex.classList.replace("introFlexRow", "introFlexCol");
-                
-                addAnimation(navFlex, "expand ease-in-out 1s")
-
-                navFlex.style.width = "100%";
-                navWrap.style.width = "85%";
-
-            }, 100)
         }
-    }
+    } 
 })
+

@@ -68,3 +68,18 @@ textarea {
     font-family: $montserrat;
 }
 
+.content1 li {
+    @include fontSize(35);
+    font-family: $muli;
+    color: $borderGrey;
+    opacity: 0.9;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: right;
+
+    span {
+        display: block;
+    }
+}
+

@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 div.stickyView {
     position: relative;
     height: 2500px;
@@ -8,11 +10,18 @@ div.stickyView {
     top: 0;
 }
 
-// div.navDiv {
-//     transition: 2s ease-out;
-//     // max-width: 25%;
-// }
+.aboutStickyView {
+    height: 5000px;
+    width: 100%;
+    border: 2px solid black;
+    transform: translateY(-$aboutTop);
 
-nav h2 {
-    transition: 2s;
+    .leftSticky {
+        position: sticky;
+        top: $aboutTop;
+        height: 1000px;
+        width: 50%;
+        z-index: 1;
+    }
 }
+

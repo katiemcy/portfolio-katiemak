@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <aside>
+        <div class="aside wrapper">
+            <a href="">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div></a>
+            <h2>MCY</h2>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+    </aside>
+
     <div class="stickyView">
         <div class="introFlexRow sticky" id="introFlex">
             <header>
@@ -32,10 +47,11 @@
                 </div>
             </header>
             
-            <div class="navDiv" id="navFlex">
+            <div class="navDiv">
                 <div class="navWrap">
                     <nav>
-                        <h2>MCY</h2>
+                        <!-- think about where to place h2 -->
+                        <h2 class="navH2">MCY</h2> 
                         <ul id="navList">
                             <li><a href="">Home</a></li>
                             <li><a href="">About</a></li>
@@ -44,85 +60,98 @@
                             <li><a href="">Contact</a></li>
                         </ul>
                     </nav>
-            
                     <footer><p>© 2023 Developed by Katie Mak</p></footer>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="about wrapper">
-        <h3>About Me</h3>
-        <figure><img src="./media/power-3.webp" alt="a person called Katie Mak"></figure>
-        <h4>Katie Mak</h4>
-        <p>Front End Developer</p>
-        <div class="aboutMeDiv">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est totam aliquam rerum. Cumque magni, id laborum quia accusamus reiciendis fuga tempore quas vel quos repudiandae eius corporis nam cupiditate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt ad facere, perferendis cupiditate iure voluptate nesciunt tempore reprehenderit, ipsum saepe, ipsam reiciendis animi accusamus maiores necessitatibus exercitationem numquam neque harum</p>
-        </div>
-    </section>
-
-    <section class="skills">
-        <div class="wrapper">
-            <h3>Languages & Tools</h3>
-            <ul>
-                <li><i class="fa-brands fa-react"></i></li>
-                <li><i class="fa-brands fa-square-js"></i></li>
-                <li><i class="fa-brands fa-html5"></i></li>
-                <li><i class="fa-brands fa-css3-alt"></i></li>
-                <li><i class="fa-brands fa-sass"></i></li>
-                <li><i class="fa-brands fa-github"></i></li>
-                <li><i class="fa-brands fa-square-git"></i></li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="projects">
-        <div class="wrapper">
-            <h3>Projects</h3>
-            <ul>
-                <li>
-                    <video src="./media/project1.MOV"></video>
-                    <h4>TrackMate</h4>
-                    <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                </li>
-                <li>
-                    <video src="./media/project1.MOV"></video>
-                    <h4>TrackMate</h4>
-                    <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                </li>
-                <li>
-                    <video src="./media/project1.MOV"></video>
-                    <h4>TrackMate</h4>
-                    <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                </li>
-                <li>
-                    <video src="./media/project1.MOV"></video>
-                    <h4>TrackMate</h4>
-                    <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="contact">
-        <div class="wrapper">
-            <h3>Get In Touch</h3>
-            <div class="contactBanner"></div>
-            <!-- <figure><img src="./images/contact_banner.jpg" alt="a grey cat looking at cat toy"></figure> -->
-            <form class="contactForm" action="submit">
-                <label for="nameInput" class="sr-only">name</label>
-                <input type="text" id="nameInput" placeholder="Name">
+    <main>
+        <div class="aboutStickyView aboutFlex">
+            <div class="leftSticky">
+                <div class="aboutLeftSide"></div>
+            </div>
     
-                <label for="emailInput" class="sr-only">email</label>
-                <input type="email" id="emailInput" placeholder="Email">
-    
-                <label for="messageField" class="sr-only">message</label>
-                <textarea type="text" id="messageField" placeholder="Message"></textarea>
-    
-                <button>Send Message</button>
-            </form>
+            <section class="about">
+                <div class="aboutRightSide">
+                    <div class="aboutTitle">
+                        <h3>About Me</h3>
+                        <h4>Katie Mak</h4>
+                        <p>Front End Developer</p>
+                    </div>
+                    <div class="content1">
+                        <p class="aboutText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est totam aliquam rerum. Cumque magni, id laborum quia accusamus reiciendis fuga tempore quas vel quos repudiandae eius corporis nam cupiditate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt ad facere, perferendis cupiditate iure voluptate nesciunt tempore reprehenderit, ipsum saepe, ipsam reiciendis animi accusamus maiores necessitatibus exercitationem numquam neque harum</p>
+                        <ul>
+                            <li>Cat mom of 3</li>
+                            <li>Have over 4250<span>cat pics in her phone</span></li>
+                            <li>Played 650<span>hours of Animal Crossing</span></li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Languages & Tools</h3>
+                    <ul class="skillIcons">
+                        <li><i class="fa-brands fa-react"></i></li>
+                        <li><i class="fa-brands fa-square-js"></i></li>
+                        <li><i class="fa-brands fa-html5"></i></li>
+                        <li><i class="fa-brands fa-css3-alt"></i></li>
+                        <li><i class="fa-brands fa-sass"></i></li>
+                        <li><i class="fa-brands fa-github"></i></li>
+                        <li><i class="fa-brands fa-square-git"></i></li>
+                    </ul>
+                </div>
+            </section>
         </div>
-    </section>
+    
+
+    
+        <section class="projects">
+            <div class="wrapper">
+                <h3>Projects</h3>
+                <ul>
+                    <li>
+                        <video src="./media/project1.MOV"></video>
+                        <h4>TrackMate</h4>
+                        <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
+                    </li>
+                    <li>
+                        <video src="./media/project1.MOV"></video>
+                        <h4>TrackMate</h4>
+                        <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
+                    </li>
+                    <li>
+                        <video src="./media/project1.MOV"></video>
+                        <h4>TrackMate</h4>
+                        <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
+                    </li>
+                    <li>
+                        <video src="./media/project1.MOV"></video>
+                        <h4>TrackMate</h4>
+                        <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    
+        <section class="contact">
+            <div class="wrapper">
+                <h3>Get In Touch</h3>
+                <div class="contactBanner"></div>
+                <!-- <figure><img src="./images/contact_banner.jpg" alt="a grey cat looking at cat toy"></figure> -->
+                <form class="contactForm" action="submit">
+                    <label for="nameInput" class="sr-only">name</label>
+                    <input type="text" id="nameInput" placeholder="Name">
+        
+                    <label for="emailInput" class="sr-only">email</label>
+                    <input type="email" id="emailInput" placeholder="Email">
+        
+                    <label for="messageField" class="sr-only">message</label>
+                    <textarea type="text" id="messageField" placeholder="Message"></textarea>
+        
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <script src="https://kit.fontawesome.com/1100e65106.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
