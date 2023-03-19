@@ -344,6 +344,11 @@ textarea {
   display: block;
 }
 
+ul.skillIcons {
+  font-size: 1rem;
+  font-family: "Mulish", sans-serif;
+}
+
 form.contactForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -414,7 +419,7 @@ nav ul li {
   padding: 8px 0;
 }
 
-div.stickyView {
+div.headerStickyView {
   position: relative;
   height: 2500px;
 }
@@ -425,18 +430,25 @@ div.stickyView {
 }
 
 .aboutStickyView {
-  height: 5000px;
+  height: 6000px;
   width: 100%;
   border: 2px solid black;
-  -webkit-transform: translateY(-700px);
-          transform: translateY(-700px);
+  -webkit-transform: translateY(-600px);
+          transform: translateY(-600px);
 }
 .aboutStickyView .leftSticky {
   position: sticky;
-  top: 700px;
+  top: 600px;
   height: 1000px;
   width: 50%;
   z-index: 1;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.contentSticky {
+  position: sticky;
+  top: 885px;
 }
 
 aside {
@@ -528,14 +540,10 @@ div.introFlexRow {
           justify-content: space-between;
 }
 
-div.header {
+header {
   height: 100vh;
-  width: 70%;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-div.header div.wrapper {
-  position: relative;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 div.headerFlex {
@@ -714,8 +722,8 @@ div.profilePic:after {
           justify-content: flex-end;
 }
 
-section.about,
-section.skills {
+section.about {
+  top: 0;
   background-color: white;
   width: 50%;
   display: -webkit-box;
@@ -724,6 +732,9 @@ section.skills {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  overflow-x: clip;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .aboutLeftSide {
@@ -735,6 +746,7 @@ section.skills {
 }
 
 .aboutRightSide {
+  width: 100%;
   height: 100%;
   padding: 0 7.5%;
   display: -webkit-box;
@@ -744,23 +756,31 @@ section.skills {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 2px solid red;
 }
 .aboutRightSide .aboutTitle {
+  height: 1000px;
   position: sticky;
-  top: 700px;
+  top: 600px;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: rgb(223, 223, 223);
 }
 .aboutRightSide .aboutTitle h3 {
-  margin: 150px 0 30px 0;
+  margin: 130px 0 30px 0;
+}
+.aboutRightSide .aboutTitle p {
+  margin-bottom: 18px;
 }
 
 .content1 {
-  position: sticky;
-  top: 983.25px;
-  height: 2000px;
+  height: 700px;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 .content1 p.aboutText {
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 0 0 1px 0;
   border-color: rgb(223, 223, 223);
   padding: 15px 0;
 }
@@ -768,27 +788,65 @@ section.skills {
   margin: 40px 0;
 }
 .content1 ul li {
-  margin: 15px 0;
+  margin: 18px 0;
+  -webkit-transition: 0.9s ease-out;
+  transition: 0.9s ease-out;
 }
 
-ul.skillIcons {
+.content2 {
+  height: 715px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.content2 h4 {
+  margin: 20px 0 40px 0;
+}
+.content2 ul.skillIcons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-ul.skillIcons li {
+.content2 ul.skillIcons li {
+  color: rgb(180, 147, 75);
+  margin: 10px;
+  width: 22%;
+}
+.content2 ul.skillIcons li i {
   font-size: 5rem;
-  margin: 5px;
 }
-ul.skillIcons li:nth-child(1) {
-  -webkit-perspective: 10px;
-          perspective: 10px;
+.content2 ul.skillIcons li.andMoreLi {
+  width: 100%;
+}
+
+ul.moreSkillsUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+ul.moreSkillsUl li {
+  font-size: 1.5rem;
 }
 
 section.projects {
+  position: sticky;
+  top: 2000px;
   min-height: 100vh;
+  -webkit-transform: translateY(-1550px);
+          transform: translateY(-1550px);
+  z-index: -1;
 }
 section.projects ul {
   display: -webkit-box;

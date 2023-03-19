@@ -83,3 +83,7 @@ textarea {
     }
 }
 
+ul.skillIcons {
+    @include fontSize(20);
+    font-family: $muli;
+}

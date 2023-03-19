@@ -7,14 +7,9 @@ div.introFlexRow {
     justify-content: space-between;
 }
 
-div.header {
+header {
     height: 100vh;
-    width: 70%;
-    transition: 1s;
-
-    div.wrapper {
-        position: relative;
-    }
+    transition: 0.8s;
 }
 
 div.headerFlex {

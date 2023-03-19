@@ -5,14 +5,15 @@
     justify-content: flex-end;
 }
 
-section.about,
-section.skills {
+section.about {
+    top: 0;
     background-color: white;
     width: 50%;
-    // height: 100vh;
-    // transform: translateY(-1850px);
     display: flex;
     justify-content: flex-end;
+    overflow-x: clip;
+    transition: 2s;
+
 }
 
 .aboutLeftSide {
@@ -26,29 +27,37 @@ section.skills {
 
 
 .aboutRightSide{
+    width: 100%;
     height: 100%;
-    // width: 50%;
     padding: 0 7.5%;
     display: flex;
     flex-direction: column;
+    border: 2px solid red;
 
     .aboutTitle {
+        // same height as .leftSticky
+        height: 1000px;
         position: sticky;
         top: $aboutTop;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        border-color: $borderGrey;
         h3 {
-            margin: 150px 0 30px 0;
+            margin: 130px 0 30px 0;
+        }
+        p {
+            margin-bottom: 18px;
         }
     }
 }
 
 .content1{
-    position: sticky;
-    top: calc($aboutTop + 283.25px);
-    height: 2000px;
+    height: 700px;
+    transition: 1s;
 
     p.aboutText {
         border-style: solid;
-        border-width: 1px 0;
+        border-width: 0 0 1px 0;
         border-color: $borderGrey;
         padding: 15px 0;
     }
@@ -56,23 +65,60 @@ section.skills {
     ul {
         margin: 40px 0;
         li {
-            margin: 15px 0;
-            // transform: translateX(-120%);
+            margin: 18px 0;
+            transition: 0.9s ease-out;
         }
     }
 }
 
-ul.skillIcons {
+
+.content2 {
+    // height of .leftSticky - height of .aboutTitle
+    height: 715px;
+    transition: 1s;
+
+    h4 {
+        margin: 20px 0 40px 0;
+    }
+    ul.skillIcons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            color: rgb(180, 147, 75);
+            margin: 10px;
+            width: 22%;
+            
+            i {
+                font-size: 5rem;
+            }
+        }
+
+        li.andMoreLi {
+            width: 100%;
+        }
+    }
+}
+
+ul.moreSkillsUl {
     display: flex;
-    flex-wrap: wrap;
-    li {
-        font-size: 5rem;
-        margin: 5px;
+    flex-wrap: nowrap;
+    width: max-content;
 
-        &:nth-child(1) {
-            perspective: 10px;
-        }
+    li {
+        font-size: 1.5rem;
     }
+
+    // white-space: nowrap;
+
+    // will-change: transform;
+    // animation: marquee 15s linear infinite;
 }
+// @keyframes marquee {
+//     0% { transform: translateX(0); }
+//     100% { transform: translateX(-100%); }
+// }
 
 

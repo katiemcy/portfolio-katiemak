@@ -1,6 +1,6 @@
 @use '../variables' as *;
 
-div.stickyView {
+div.headerStickyView {
     position: relative;
     height: 2500px;
 }
@@ -11,7 +11,7 @@ div.stickyView {
 }
 
 .aboutStickyView {
-    height: 5000px;
+    height: 6000px;
     width: 100%;
     border: 2px solid black;
     transform: translateY(-$aboutTop);
@@ -22,6 +22,11 @@ div.stickyView {
         height: 1000px;
         width: 50%;
         z-index: 1;
+        transition: 2s;
     }
 }
 
+.contentSticky {
+    position: sticky;
+    top: calc($aboutTop + 285px);
+}

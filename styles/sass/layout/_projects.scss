@@ -1,7 +1,11 @@
 @use "../variables" as *;
 
 section.projects {
+    position: sticky;
+    top: 2000px;
     min-height: 100vh;
+    transform: translateY(-1550px);
+    z-index: -1;
 
     ul {
         display: flex;
