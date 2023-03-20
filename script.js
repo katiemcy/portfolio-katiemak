@@ -5,7 +5,6 @@ const aboutStickyView = document.querySelector('.aboutStickyView');
 
 const navDiv = document.querySelector('.navDiv');
 const introFlex = document.querySelector('#introFlex');
-const navWrap = document.querySelector('.navWrap');
 
 const header = document.querySelector('header');
 const nav = document.querySelector('nav');
@@ -32,6 +31,7 @@ if (!navDiv.style.width) {
 
 
 window.addEventListener('scroll', () => {
+    // reference: https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
     const scrollPosition = html.scrollTop;
     const maxScrollTop = headerStickyView.scrollHeight - window.innerHeight;
     const scrollFraction = scrollPosition / maxScrollTop;
@@ -73,20 +73,12 @@ window.addEventListener('scroll', () => {
         // }
     } 
 
-    // List slide in animation
+    // Fun Fact list slide in animation
     const aboutMaxScroll = aboutStickyView.scrollHeight - window.innerHeight;
     // 1800 is the height of scroll space until about section comes to sight
         // aboutScrollFraction = 0 means the about section just arrives top of viewport
         // when aboutScrollFraction starts to > 1, the about section starts to leave viewport
-    const aboutScrollFraction = (scrollPosition -1800) / aboutMaxScroll;
-
-    // console.log('stickView scrollheight', aboutStickyView.scrollHeight)
-    // console.log("aboutScroll", aboutScrollFraction)
-
-    // console.log("header sticky", headerStickyView.scrollHeight
-    // )
-
-    // console.log("html scrollTop", scrollPosition)
+    const aboutScrollFraction = (scrollPosition - 1800) / aboutMaxScroll;
 
     console.log("aboutScrollFraction", aboutScrollFraction)
 
@@ -95,8 +87,8 @@ window.addEventListener('scroll', () => {
 
     const kickInPoint = [
         0.10,
-        0.25,
-        0.40
+        0.18,
+        0.26
     ]
 
     const slideInAnimation = (kickInPoint, li) => {
@@ -116,7 +108,12 @@ window.addEventListener('scroll', () => {
     const content1Div = document.querySelector('.content1');
     const content2Div = document.querySelector('.content2');
 
-    const translateFraction =  (aboutScrollFraction - 0.5) / (0.8 - 0.5);
+    const fractionPoint = {
+        startPoint: 0.5,
+        endPoint: 0.65
+    }
+
+    const translateFraction =  (aboutScrollFraction - fractionPoint.startPoint) / (fractionPoint.endPoint - fractionPoint.startPoint);
     // translateNum for content1
     const translateNum1 = translateFraction * 120
     // translateNum for content2 
@@ -125,12 +122,10 @@ window.addEventListener('scroll', () => {
     const translatePercentage2 = roundAsPercentString(translateNum2)
     ;
 
-    console.log(translateNum1, translateNum2);
-
-    if (aboutScrollFraction < 0.55 ) {
+    if (aboutScrollFraction < fractionPoint.startPoint ) {
         content1Div.style.transform = "translateX(0)"
         content2Div.style.transform = "translateX(120%)"
-    } else if (aboutScrollFraction >= 0.515 && aboutScrollFraction <= 0.8) {
+    } else if (aboutScrollFraction >= fractionPoint.startPoint && aboutScrollFraction <= fractionPoint.endPoint) {
         
         content1Div.style.transform = `translateX(-${translatePercentage1})`
         content2Div.style.transform = `translateX(${translatePercentage2})`
@@ -139,6 +134,7 @@ window.addEventListener('scroll', () => {
         content1Div.style.transform = "translateX(-120%)"
         content2Div.style.transform = "translateX(0)"
     }
+// END: language & tools slide in animation
 
     // Open animation
     // const sectionAbout = document.querySelector('.about');
@@ -156,26 +152,11 @@ window.addEventListener('scroll', () => {
 
 // Play video on hover
 const videos = document.querySelectorAll('video');
-console.log(videos);
-const projectsLi = document.querySelectorAll('.projectsUl li')
+// const projectsLi = document.querySelectorAll('.projectsUl li')
 
-console.log(projectsLi)
 
-projectsLi.forEach(function(li){
-    const video = li.querySelector('video');
-    li.addEventListener('mouseenter', function(event){
-        console.log(video)
+videos.forEach(function(v){
+    v.addEventListener('mouseover', function(video){
+        this.play();
     })
 })
-
-// projectsLi.forEach(function(v){
-//     v.addEventListener('mouseenter', function(event){
-//         console.log(event.target)
-//     })
-// })
-
-// videos.forEach(function(v){
-//     v.addEventListener('mouseenter', function(event){
-//         console.log(event.target)
-//     })
-// })

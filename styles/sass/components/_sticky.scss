@@ -5,7 +5,7 @@ div.headerStickyView {
     height: 2500px;
 }
 
-.sticky {
+.headerSticky {
     position: sticky;
     top: 0;
 }
@@ -29,4 +29,10 @@ div.headerStickyView {
 .contentSticky {
     position: sticky;
     top: calc($aboutTop + 285px);
+}
+
+.projectSticky {
+    position: sticky;
+    top: $aboutTop;
+    transform: translateY(-$aboutTop);
 }

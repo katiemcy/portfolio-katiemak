@@ -53,7 +53,7 @@ section.about {
 
 .content1{
     height: 700px;
-    transition: 1s;
+    transition: 0.3s ease-out;
 
     p.aboutText {
         border-style: solid;
@@ -75,7 +75,7 @@ section.about {
 .content2 {
     // height of .leftSticky - height of .aboutTitle
     height: 715px;
-    transition: 1s;
+    transition: 0.3s ease-out;
 
     h4 {
         margin: 20px 0 40px 0;
@@ -86,8 +86,9 @@ section.about {
         justify-content: center;
         align-items: center;
 
-        li {
-            color: rgb(180, 147, 75);
+        &>li:not(.andMoreLi) {
+            color: $gold;
+            text-align: center;
             margin: 10px;
             width: 22%;
             
@@ -98,6 +99,8 @@ section.about {
 
         li.andMoreLi {
             width: 100%;
+            color: $gold;
+            margin-top: 20px;
         }
     }
 }
@@ -108,7 +111,14 @@ ul.moreSkillsUl {
     width: max-content;
 
     li {
-        font-size: 1.5rem;
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    li:not(:last-child) {
+        border-width: 0 1px 0 0;
+        border-color: $gold;
+        border-style: solid;
     }
 
     // white-space: nowrap;

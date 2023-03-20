@@ -87,3 +87,8 @@ ul.skillIcons {
     @include fontSize(20);
     font-family: $muli;
 }
+
+ul.moreSkillsUl li {
+    @include fontSize(25);
+    
+}

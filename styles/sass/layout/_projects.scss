@@ -1,29 +1,37 @@
 @use "../variables" as *;
 
 section.projects {
-    position: sticky;
-    top: 2000px;
-    min-height: 100vh;
-    transform: translateY(-1550px);
-    z-index: -1;
+    height: 100vh;
+    padding-top: 80px;
+    border: 2px solid blue;
 
     ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        position: relative;
+        height: 85%;
 
         li {
-            width: 48%;
-            margin: 30px 0;
+            position: absolute;
+            height: 70vh;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+
+            video {
+                height:80%;
+                width: 100%;
+            }
 
             h4,
             p {
+                text-align: center;
                 padding-left: 3px;
             }
         }
     }
 }
 
-video {
-    width: 100%;
+.animatedUl {
+    li:not(:first-child) {
+        transform: translateY(120%);
+    }
 }

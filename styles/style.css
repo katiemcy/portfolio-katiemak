@@ -267,6 +267,10 @@ a:hover, a:focus {
   margin: 0 auto;
 }
 
+main {
+  border: 2px solid purple;
+}
+
 h1 {
   font-size: 2.4rem;
   font-family: "Montserrat", sans-serif;
@@ -349,6 +353,10 @@ ul.skillIcons {
   font-family: "Mulish", sans-serif;
 }
 
+ul.moreSkillsUl li {
+  font-size: 1.25rem;
+}
+
 form.contactForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -424,7 +432,7 @@ div.headerStickyView {
   height: 2500px;
 }
 
-.sticky {
+.headerSticky {
   position: sticky;
   top: 0;
 }
@@ -449,6 +457,13 @@ div.headerStickyView {
 .contentSticky {
   position: sticky;
   top: 885px;
+}
+
+.projectSticky {
+  position: sticky;
+  top: 600px;
+  -webkit-transform: translateY(-600px);
+          transform: translateY(-600px);
 }
 
 aside {
@@ -775,8 +790,8 @@ section.about {
 
 .content1 {
   height: 700px;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 .content1 p.aboutText {
   border-style: solid;
@@ -795,8 +810,8 @@ section.about {
 
 .content2 {
   height: 715px;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 .content2 h4 {
   margin: 20px 0 40px 0;
@@ -814,16 +829,19 @@ section.about {
       -ms-flex-align: center;
           align-items: center;
 }
-.content2 ul.skillIcons li {
+.content2 ul.skillIcons > li:not(.andMoreLi) {
   color: rgb(180, 147, 75);
+  text-align: center;
   margin: 10px;
   width: 22%;
 }
-.content2 ul.skillIcons li i {
+.content2 ul.skillIcons > li:not(.andMoreLi) i {
   font-size: 5rem;
 }
 .content2 ul.skillIcons li.andMoreLi {
   width: 100%;
+  color: rgb(180, 147, 75);
+  margin-top: 20px;
 }
 
 ul.moreSkillsUl {
@@ -837,38 +855,44 @@ ul.moreSkillsUl {
   width: max-content;
 }
 ul.moreSkillsUl li {
-  font-size: 1.5rem;
+  margin-top: 20px;
+  padding: 0 15px;
+}
+ul.moreSkillsUl li:not(:last-child) {
+  border-width: 0 1px 0 0;
+  border-color: rgb(180, 147, 75);
+  border-style: solid;
 }
 
 section.projects {
-  position: sticky;
-  top: 2000px;
-  min-height: 100vh;
-  -webkit-transform: translateY(-1550px);
-          transform: translateY(-1550px);
-  z-index: -1;
+  height: 100vh;
+  padding-top: 80px;
+  border: 2px solid blue;
 }
 section.projects ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  position: relative;
+  height: 85%;
 }
 section.projects ul li {
-  width: 48%;
-  margin: 30px 0;
+  position: absolute;
+  height: 70vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+section.projects ul li video {
+  height: 80%;
+  width: 100%;
 }
 section.projects ul li h4,
 section.projects ul li p {
+  text-align: center;
   padding-left: 3px;
 }
 
-video {
-  width: 100%;
+.animatedUl li:not(:first-child) {
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
 }
 
 section.contact {
