@@ -16,18 +16,6 @@ hamburger.addEventListener('click', function(){
 
 // END: Hamburger Menu
 
-// top nav bar slide-in/ slide-out
-const aside = document.querySelector('aside');
-
-    // *** should add some screen changing listener to this ***
-if (!navDiv.style.width) {
-    aside.style.height = "65px";
-} else {
-    aside.style.height = "0";
-}
-// END: top nav bar slide-in/ slide-out
-
-
 function roundAsPercentString (num) {
     const roundedNum = num.toFixed(2);
     return roundedNum + "%";
@@ -38,6 +26,8 @@ function addAnimation (element, animation) {
 }
 
 // Scrolling Animations
+const aside = document.querySelector('aside');
+
 const scrollListening = () => {
     // header page animation
         const header = document.querySelector('header');
@@ -173,16 +163,24 @@ const scrollListening = () => {
             sayHiDiv.style.opacity = "1";
             sayHiDiv.style.visibility = 'visible'
         }
-    }
+}
 
     // depends on initial screen size only
 function screenChange(x) {
     if (x.matches) { // If media query matches
-        window.addEventListener('scroll', scrollListening, true)
+        window.addEventListener('scroll', scrollListening, true);
+
+    // top nav bar slide-in/ slide-out
+        if (!navDiv.style.width) {
+            aside.style.height = "0";
+        } else {
+            aside.style.height = "65px";
+        }
+
     } else {
         window.removeEventListener('scroll', scrollListening, true)
     }
-  }
+}
   
 let x = window.matchMedia("(min-width: 768px)")
 screenChange(x); // Call listener function at run time

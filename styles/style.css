@@ -449,7 +449,7 @@ div.headerStickyView {
 aside {
   position: fixed;
   z-index: 3;
-  height: auto;
+  height: 0;
   width: 100%;
   overflow-y: hidden;
   -webkit-transition: 1s;
@@ -956,6 +956,9 @@ form.contactForm button {
 }
 
 @media (max-width: 767px) {
+  aside {
+    height: auto;
+  }
   div.headerStickyView {
     height: -webkit-fit-content;
     height: -moz-fit-content;

@@ -1,6 +1,10 @@
 @use '../variables' as *;
 
 @media (max-width: 767px) {
+// Nav Bar
+    aside {
+        height: auto;
+    }
 // header
     div.headerStickyView {
         height: fit-content;
