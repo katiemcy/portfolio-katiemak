@@ -3,7 +3,6 @@
 @use "./base/globalStyle";
 @use "./base/typography";
 
-@use "./components/contactForm";
 @use "./components/nav";
 @use "./components/sticky";
 @use "./components/aside";
@@ -12,3 +11,4 @@
 @use "./layout/about";
 @use "./layout/projects";
 @use "./layout/contact";
+@use "./layout/mediaQueries";

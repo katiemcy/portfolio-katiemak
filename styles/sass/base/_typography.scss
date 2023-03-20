@@ -37,11 +37,6 @@ h4 {
     margin: 10px 0;
 }
 
-h4 + p{
-    @include fontSize(19);
-    color: $emGrey;
-    margin: 0;
-}
 
 a {
     font-family: $montserrat;
@@ -77,7 +72,7 @@ textarea {
     font-style: italic;
     text-transform: uppercase;
     text-align: right;
-
+    
     span {
         display: block;
     }
@@ -91,4 +86,25 @@ ul.skillIcons {
 ul.moreSkillsUl li {
     @include fontSize(25);
     
+}
+
+ul.animatedUl {
+    h4,
+    p {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+    p {
+        @include fontSize(19);
+    }
+}
+
+.sayHi h3{
+    @include fontSize(115);
+    font-family: $lobster;
+    text-align: center;
+    letter-spacing: 3px;
+    color: rgba(235, 163, 163, 0.7);
 }

@@ -267,10 +267,6 @@ a:hover, a:focus {
   margin: 0 auto;
 }
 
-main {
-  border: 2px solid purple;
-}
-
 h1 {
   font-size: 2.4rem;
   font-family: "Montserrat", sans-serif;
@@ -301,12 +297,6 @@ h4 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   margin: 10px 0;
-}
-
-h4 + p {
-  font-size: 0.95rem;
-  color: rgb(118, 118, 118);
-  margin: 0;
 }
 
 a {
@@ -357,39 +347,25 @@ ul.moreSkillsUl li {
   font-size: 1.25rem;
 }
 
-form.contactForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-form.contactForm input,
-form.contactForm textarea {
-  background-color: rgb(248, 248, 248);
-  border: 1px solid rgb(223, 223, 223);
-  margin-bottom: 30px;
-  padding: 10px;
-}
-form.contactForm textarea {
-  height: 130px;
-  resize: none;
-}
-form.contactForm button {
+ul.animatedUl h4,
+ul.animatedUl p {
   background-color: black;
   color: white;
-  border: none;
-  padding: 14px 30px 19px;
-  font-size: 0.8rem;
-  font-family: "Mulish", sans-serif;
-  width: 195px;
-  cursor: pointer;
+  text-align: center;
+}
+ul.animatedUl p {
+  font-size: 0.95rem;
+}
+
+.sayHi h3 {
+  font-size: 5.75rem;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  letter-spacing: 3px;
+  color: rgba(235, 163, 163, 0.7);
 }
 
 div.navDiv {
-  position: sticky;
   top: 0;
   background-color: white;
   width: 30%;
@@ -427,6 +403,14 @@ nav ul li {
   padding: 8px 0;
 }
 
+div.openMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  height: 100vh;
+}
+
 div.headerStickyView {
   position: relative;
   height: 2500px;
@@ -438,9 +422,8 @@ div.headerStickyView {
 }
 
 .aboutStickyView {
-  height: 6000px;
+  height: 4500px;
   width: 100%;
-  border: 2px solid black;
   -webkit-transform: translateY(-600px);
           transform: translateY(-600px);
 }
@@ -460,15 +443,12 @@ div.headerStickyView {
 }
 
 .projectSticky {
-  position: sticky;
-  top: 600px;
-  -webkit-transform: translateY(-600px);
-          transform: translateY(-600px);
+  height: 5000px;
 }
 
 aside {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   height: auto;
   width: 100%;
   overflow-y: hidden;
@@ -497,6 +477,7 @@ aside {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  z-index: 5;
 }
 .hamburger span {
   display: block;
@@ -771,7 +752,6 @@ section.about {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 2px solid red;
 }
 .aboutRightSide .aboutTitle {
   height: 1000px;
@@ -848,11 +828,8 @@ ul.moreSkillsUl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 ul.moreSkillsUl li {
   margin-top: 20px;
@@ -865,38 +842,77 @@ ul.moreSkillsUl li:not(:last-child) {
 }
 
 section.projects {
-  height: 100vh;
   padding-top: 80px;
-  border: 2px solid blue;
+  -webkit-transform: translateY(-600px);
+          transform: translateY(-600px);
 }
 section.projects ul {
   position: relative;
   height: 85%;
 }
 section.projects ul li {
-  position: absolute;
   height: 70vh;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  background-color: black;
+  margin: 0 auto 400px auto;
 }
 section.projects ul li video {
   height: 80%;
   width: 100%;
-}
-section.projects ul li h4,
-section.projects ul li p {
-  text-align: center;
-  padding-left: 3px;
+  margin: 15px 0;
 }
 
-.animatedUl li:not(:first-child) {
-  -webkit-transform: translateY(120%);
-          transform: translateY(120%);
+.animatedUl li {
+  position: sticky;
+  top: calc(600px + 20vh);
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+}
+.animatedUl li h4,
+.animatedUl li p {
+  margin: 0;
+  padding: 10px auto;
+}
+
+.projectH3 {
+  position: sticky;
+  top: 700px;
 }
 
 section.contact {
+  position: absolute;
+  height: calc(100vh - 65px);
+  width: 100%;
+  top: 9587px;
+}
+
+.sayHi {
+  background-image: url(../media/sayHiBg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+.getInTouchDiv {
+  background-color: rgb(248, 248, 248);
+  height: 100vh;
+  width: 100%;
+}
+.getInTouchDiv h3 {
+  margin: 100px 0 30px 0;
 }
 
 div.contactBanner {
@@ -906,4 +922,116 @@ div.contactBanner {
   height: 30%;
   width: 100%;
   margin: 60px 0 40px 0;
+}
+
+form.contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+form.contactForm input,
+form.contactForm textarea {
+  background-color: rgb(248, 248, 248);
+  border: 1px solid rgb(223, 223, 223);
+  margin-bottom: 30px;
+  padding: 10px;
+}
+form.contactForm textarea {
+  height: 130px;
+  resize: none;
+}
+form.contactForm button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 14px 30px 19px;
+  font-size: 0.8rem;
+  font-family: "Mulish", sans-serif;
+  width: 195px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  div.headerStickyView {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  div.navDiv {
+    width: 0;
+  }
+  .aboutFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .aboutStickyView {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .aboutStickyView .leftSticky,
+  .aboutStickyView .aboutTitle,
+  .aboutStickyView .contentSticky {
+    position: static;
+  }
+  .aboutStickyView .leftSticky,
+  .aboutStickyView section.about {
+    width: 100%;
+  }
+  .aboutStickyView .leftSticky {
+    height: 400px;
+  }
+  section.about {
+    background-color: rgb(248, 248, 248);
+  }
+  section.about .aboutTitle {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  section.about .aboutTitle h3 {
+    margin-top: 50px;
+  }
+  section.projects {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 80px;
+  }
+  section.projects h3 {
+    position: static;
+  }
+  section.projects ul li {
+    margin: 0 auto;
+    position: static;
+    margin: 0 auto;
+  }
+  section.contact {
+    position: static;
+  }
+}
+@media (max-width: 650px) {
+  div.headerFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.headerFlex div.profilePic {
+    margin: 0;
+  }
+  div.headerFlex .greetingFlex {
+    text-align: center;
+    margin-top: 20px;
+  }
 }

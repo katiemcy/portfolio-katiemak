@@ -11,9 +11,8 @@ div.headerStickyView {
 }
 
 .aboutStickyView {
-    height: 6000px;
+    height: 4500px; //before: 6000px
     width: 100%;
-    border: 2px solid black;
     transform: translateY(-$aboutTop);
 
     .leftSticky {
@@ -32,7 +31,9 @@ div.headerStickyView {
 }
 
 .projectSticky {
-    position: sticky;
-    top: $aboutTop;
-    transform: translateY(-$aboutTop);
+    // position: sticky;
+    // top: $aboutTop;
+    height: 5000px;
+    // transform: translateY(-$aboutTop);
 }
+

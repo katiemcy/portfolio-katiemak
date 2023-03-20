@@ -1,37 +1,49 @@
 @use "../variables" as *;
 
 section.projects {
-    height: 100vh;
     padding-top: 80px;
-    border: 2px solid blue;
+    // border: 2px solid blue;
+    transform: translateY(-$aboutTop);
 
     ul {
         position: relative;
         height: 85%;
 
         li {
-            position: absolute;
             height: 70vh;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
+            background-color: black;
+            margin: 0 auto 400px auto;
+            // border: 2px solid green;
 
             video {
-                height:80%;
+                height: 80%;
                 width: 100%;
-            }
-
-            h4,
-            p {
-                text-align: center;
-                padding-left: 3px;
+                margin: 15px 0;
             }
         }
     }
 }
 
 .animatedUl {
-    li:not(:first-child) {
-        transform: translateY(120%);
+    li {
+        position: sticky;
+        top: calc($aboutTop + 20vh);
+        transition: 1s ease-out;
+
+        h4,
+        p {
+            margin: 0;
+            padding: 10px auto;
+        }
     }
 }
+
+.projectH3 {
+    position: sticky;
+    top: calc($aboutTop + 100px);
+}
+
+// .li2 {
+//     transform: translateY(calc(-70vh - 200px));
+// }
+//  -843.3px

@@ -8,23 +8,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Mulish:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Mulish:wght@400;900&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <aside>
         <div class="aside wrapper">
-            <a href="">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div></a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <h2>MCY</h2>
-            <a href=""></a>
-            <a href=""></a>
         </div>
     </aside>
 
@@ -33,10 +30,12 @@
             <header>
                 <div class="wrapper">
                     <div class="headerFlex">
-                        <div class="profilePic"></div>
+                        <div class="profilePic">
+                            <!-- profile picture -->
+                        </div>
                         <div class="greetingFlex">
                             <h1>Katie Mak</h1>
-                            <p>Nice to meet you!✨ I am a Front End Developer at heart and build responsive and accessible webistes with clean code.</p>
+                            <p>Nice to meet you!✨ I am a Front End Developer at heart and I build responsive and accessible webistes with clean code.</p>
                         </div>
                     </div>
                     <div class="scroll-downs">
@@ -50,14 +49,12 @@
             <div class="navDiv">
                 <div class="navWrap">
                     <nav>
-                        <!-- think about where to place h2 -->
                         <h2 class="navH2">MCY</h2> 
                         <ul id="navList">
                             <li><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Skills</a></li>
-                            <li><a href="">Projects</a></li>
-                            <li><a href="">Contact</a></li>
+                            <li><a href="#aboutLink">About</a></li>
+                            <li><a href="#projectLink">Projects</a></li>
+                            <li><a href="#contactLink">Contact</a></li>
                         </ul>
                     </nav>
                     <footer><p>© 2023 Developed by Katie Mak</p></footer>
@@ -67,7 +64,7 @@
     </div>
 
     <main>
-        <div class="aboutStickyView aboutFlex">
+        <div class="aboutStickyView aboutFlex" id="aboutLink">
             <div class="leftSticky">
                 <div class="aboutLeftSide"></div>
             </div>
@@ -112,51 +109,55 @@
             </section>
         </div>
     
-        <section class="projects projectSticky">
+        <section class="projects projectSticky" id="projectLink">
             <div class="wrapper">
-                <h3>Projects</h3>
+                <h3 class="projectH3">Projects</h3>
                 <ul class="animatedUl">
                     <li>
-                        <video muted><source src="./media/trackMate.MP4"></video>
+                        <video muted loop><source src="./media/trackMate.MP4"></video>
                         <h4>TrackMate</h4>
                         <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
                     </li>
-                    <li>
-                        <video muted><source src="./media/trackMate.MP4"></video>
+                    <li class="li2">
+                        <video muted loop><source src="./media/tasty.MP4"></video>
+                        <h4>Tasty</h4>
+                        <p>HTML| CSS </p>
+                    </li>
+                    <li class="li3">
+                        <video muted loop><source src="./media/trackMate.MP4"></video>
                         <h4>TrackMate</h4>
                         <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
                     </li>
-                    <li>
+                    <!-- <li class="li4">
                         <video muted><source src="./media/trackMate.MP4"></video>
                         <h4>TrackMate</h4>
                         <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                    </li>
-                    <li>
-                        <video muted><source src="./media/trackMate.MP4"></video>
-                        <h4>TrackMate</h4>
-                        <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </section>
-    
+        
         <section class="contact">
-            <div class="wrapper">
-                <h3>Get In Touch</h3>
-                <div class="contactBanner"></div>
-                <!-- <figure><img src="./images/contact_banner.jpg" alt="a grey cat looking at cat toy"></figure> -->
-                <form class="contactForm" action="submit">
-                    <label for="nameInput" class="sr-only">name</label>
-                    <input type="text" id="nameInput" placeholder="Name">
-        
-                    <label for="emailInput" class="sr-only">email</label>
-                    <input type="email" id="emailInput" placeholder="Email">
-        
-                    <label for="messageField" class="sr-only">message</label>
-                    <textarea type="text" id="messageField" placeholder="Message"></textarea>
-        
-                    <button>Send Message</button>
-                </form>
+            <div class="sayHi"><h3><em>Say Hi</em></h3></div>
+            <div class="getInTouchDiv">
+                <div class="wrapper">
+                    <h3>Get In Touch</h3>
+                    <div class="contactBanner">
+                        <!-- contact page banner image -->
+                    </div>
+                    <form class="contactForm" id="contactLink" action="submit">
+                        <label for="nameInput" class="sr-only">name</label>
+                        <input type="text" id="nameInput" placeholder="Name">
+            
+                        <label for="emailInput" class="sr-only">email</label>
+                        <input type="email" id="emailInput" placeholder="Email">
+            
+                        <label for="messageField" class="sr-only">message</label>
+                        <textarea type="text" id="messageField" placeholder="Message"></textarea>
+            
+                        <button>Send Message</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

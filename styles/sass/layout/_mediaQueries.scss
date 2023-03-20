@@ -1,0 +1,88 @@
+@use '../variables' as *;
+
+@media (max-width: 767px) {
+// header
+    div.headerStickyView {
+        height: fit-content;
+    }
+
+    div.navDiv {
+        width: 0;
+    }
+
+// About Section
+    .aboutFlex {
+        flex-direction: column;
+    }
+
+    .aboutStickyView {
+        height: fit-content;
+        transform: translateY(0);
+
+        .leftSticky,
+        .aboutTitle,
+        .contentSticky {
+            position: static;
+        }
+
+        .leftSticky,
+        section.about {
+            width: 100%;
+        }
+
+        .leftSticky {
+            height: 400px;
+        }
+    }
+
+    section.about {
+        background-color: $bgColor;
+        .aboutTitle {
+            height: fit-content;
+            h3 {
+                margin-top: 50px;
+            }
+        }
+    }
+        
+
+// Projects Section
+    section.projects {
+        transform: translateY(0);
+        height: fit-content;
+        padding-bottom: 80px;
+
+        h3 {
+            position: static;
+        }
+
+        ul li {
+            margin: 0 auto;
+            position: static;
+            margin: 0 auto;
+        }
+    }
+
+// Contact Section
+    section.contact {
+        position: static;
+
+    }
+
+}
+
+@media (max-width: 650px) {
+// Header 
+    div.headerFlex {
+        flex-direction: column;
+
+        div.profilePic {
+            margin: 0;
+        }
+
+        .greetingFlex {
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}

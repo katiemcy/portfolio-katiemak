@@ -2,7 +2,7 @@
 
 aside {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     height: auto;
     width: 100%;
     overflow-y: hidden;
@@ -19,6 +19,7 @@ aside {
 }
 
 // Hambuger menu
+    // reference: https://codepen.io/designcouch/pen/ExvwPY
 .hamburger {
     height: 20px;
     width: 25px;
@@ -26,6 +27,7 @@ aside {
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
+    z-index: 5;
 
     span {
         display: block;

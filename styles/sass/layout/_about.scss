@@ -22,7 +22,6 @@ section.about {
     background-image: url(../media/cat1.JPG);
     background-size: cover;
     background-repeat: no-repeat;
-    // transform: translateY(-850px);
 }
 
 
@@ -32,7 +31,7 @@ section.about {
     padding: 0 7.5%;
     display: flex;
     flex-direction: column;
-    border: 2px solid red;
+    // border: 2px solid red;
 
     .aboutTitle {
         // same height as .leftSticky
@@ -71,7 +70,6 @@ section.about {
     }
 }
 
-
 .content2 {
     // height of .leftSticky - height of .aboutTitle
     height: 715px;
@@ -107,8 +105,8 @@ section.about {
 
 ul.moreSkillsUl {
     display: flex;
-    flex-wrap: nowrap;
-    width: max-content;
+    flex-wrap: wrap;
+    // width: max-content;
 
     li {
         margin-top: 20px;
@@ -121,14 +119,7 @@ ul.moreSkillsUl {
         border-style: solid;
     }
 
-    // white-space: nowrap;
-
-    // will-change: transform;
-    // animation: marquee 15s linear infinite;
 }
-// @keyframes marquee {
-//     0% { transform: translateX(0); }
-//     100% { transform: translateX(-100%); }
-// }
+
 
 

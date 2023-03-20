@@ -1,5 +1,5 @@
 div.navDiv {
-    position: sticky;
+    // position: sticky;
     top: 0;
     background-color: white;
     width: 30%;
@@ -30,4 +30,12 @@ nav {
     }
 }
 
+div.openMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: 100vh;
+
+}
 
