@@ -13,11 +13,13 @@ div.headerStickyView {
 .aboutStickyView {
     height: 4500px; //before: 6000px
     width: 100%;
-    transform: translateY(-$aboutTop);
+    // transform: translateY(-$aboutTop);
+
 
     .leftSticky {
-        position: sticky;
-        top: $aboutTop;
+        // position: sticky;
+        // top: $aboutTop;
+        top: 0;
         height: 1000px;
         width: 50%;
         z-index: 1;
@@ -25,10 +27,10 @@ div.headerStickyView {
     }
 }
 
-.contentSticky {
-    position: sticky;
-    top: calc($aboutTop + 285px);
-}
+// .contentSticky {
+//     position: sticky;
+//     top: calc($aboutTop + 285px);
+// }
 
 .projectSticky {
     // position: sticky;

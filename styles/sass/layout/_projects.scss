@@ -3,7 +3,7 @@
 section.projects {
     padding-top: 80px;
     // border: 2px solid blue;
-    transform: translateY(-$aboutTop);
+    // transform: translateY(-$aboutTop);
 
     ul {
         position: relative;
@@ -27,7 +27,8 @@ section.projects {
 .animatedUl {
     li {
         position: sticky;
-        top: calc($aboutTop + 20vh);
+        // top: calc($aboutTop + 20vh);
+        top: 20vh;
         transition: 1s ease-out;
 
         h4,
@@ -40,7 +41,8 @@ section.projects {
 
 .projectH3 {
     position: sticky;
-    top: calc($aboutTop + 100px);
+    // top: calc($aboutTop + 100px);
+    top: 100px;
 }
 
 // .li2 {
