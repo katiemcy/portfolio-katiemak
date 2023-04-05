@@ -38,13 +38,14 @@ const scrollListening = () => {
     
         // reference: https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
         const scrollPosition = html.scrollTop;
-        const maxScrollTop = headerStickyView.scrollHeight - window.innerHeight;
-        const scrollFraction = scrollPosition / maxScrollTop;
+        // maxScrollTop is the height of headerStickyView before it starts to leave the window
+        // const maxScrollTop = headerStickyView.scrollHeight - window.innerHeight;
+        const headerScrollFraction = scrollPosition / headerStickyView.scrollHeight;
     
-        const navWidth = 0.3 * (1 - scrollFraction / 10) * 100;
-        const headerWidth = 0.7 * (1 + scrollFraction) * 100;
+        const navWidth = 0.3 * (1 - headerScrollFraction / 10) * 100;
+        const headerWidth = 0.7 * (1 + headerScrollFraction) * 100;
         
-        if(scrollFraction <= 0.39) {
+        if(headerScrollFraction <= 0.39) {
             animationFlag = true;
             
             navDiv.style.width = roundAsPercentString(navWidth);
@@ -71,6 +72,8 @@ const scrollListening = () => {
 
     // Fun Fact list slide in animation
         const aboutStickyView = document.querySelector('.aboutStickyView');
+
+        const aboutScrollFraction = (scrollPosition - 2500) / aboutStickyView.scrollHeight;
     
         // const aboutMaxScroll = aboutStickyView.scrollHeight - window.innerHeight;
         // // 1800 is the height of scroll space until about section comes to sight
@@ -106,8 +109,8 @@ const scrollListening = () => {
         const content2Div = document.querySelector('.content2');
     
         const fractionPoint = {
-            startPoint: 0.5,
-            endPoint: 0.65
+            startPoint: 0.2,
+            endPoint: 0.4
         }
     
         const translateFraction =  (aboutScrollFraction - fractionPoint.startPoint) / (fractionPoint.endPoint - fractionPoint.startPoint);

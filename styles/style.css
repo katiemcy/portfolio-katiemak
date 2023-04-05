@@ -268,6 +268,7 @@ a:hover, a:focus {
 }
 
 h1 {
+  color: black;
   font-size: 2.4rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
@@ -280,6 +281,7 @@ h1 + p {
 }
 
 h2 {
+  color: black;
   font-size: 1.5rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
@@ -287,12 +289,14 @@ h2 {
 }
 
 h3 {
+  color: black;
   font-size: 1.5rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
 }
 
 h4 {
+  color: black;
   font-size: 1.25rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -305,7 +309,8 @@ a {
   color: rgb(118, 118, 118);
 }
 
-p {
+p,
+li {
   font-size: 0.9rem;
   font-family: "Mulish", sans-serif;
   line-height: 30px;
@@ -345,16 +350,6 @@ ul.skillIcons {
 
 ul.moreSkillsUl li {
   font-size: 1.25rem;
-}
-
-ul.animatedUl h4,
-ul.animatedUl p {
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-ul.animatedUl p {
-  font-size: 0.95rem;
 }
 
 .sayHi h3 {
@@ -422,8 +417,12 @@ div.headerStickyView {
 }
 
 .aboutStickyView {
-  height: 4500px;
+  height: 2800px;
   width: 100%;
+}
+.aboutStickyView .aboutSticky {
+  position: sticky;
+  top: 0;
 }
 .aboutStickyView .leftSticky {
   top: 0;
@@ -434,8 +433,13 @@ div.headerStickyView {
   transition: 2s;
 }
 
-.projectSticky {
+.projectStickyView {
   height: 5000px;
+}
+.projectStickyView .projectSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
 aside {
@@ -719,7 +723,7 @@ div.profilePic:after {
 }
 
 section.about {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.918);
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -735,9 +739,6 @@ section.about {
 
 .aboutRightSide {
   position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0 7.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -745,6 +746,9 @@ section.about {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 7.5%;
 }
 .aboutRightSide .aboutTitle {
   border-style: solid;
@@ -810,7 +814,6 @@ section.about {
 }
 .content2 ul.skillIcons li.andMoreLi {
   width: 100%;
-  color: rgb(180, 147, 75);
   margin-top: 20px;
 }
 
@@ -831,39 +834,39 @@ ul.moreSkillsUl li:not(:last-child) {
   border-style: solid;
 }
 
-section.projects {
-  padding-top: 80px;
+.projects h3 {
+  padding-top: 100px;
 }
-section.projects ul {
-  position: relative;
-  height: 85%;
-}
-section.projects ul li {
-  height: 70vh;
-  background-color: black;
-  margin: 0 auto 400px auto;
-}
-section.projects ul li video {
-  height: 80%;
-  width: 100%;
-  margin: 15px 0;
-}
-
-.animatedUl li {
-  position: sticky;
-  top: 20vh;
-  -webkit-transition: 1s ease-out;
-  transition: 1s ease-out;
-}
-.animatedUl li h4,
-.animatedUl li p {
+.projects h5 {
   margin: 0;
-  padding: 10px auto;
 }
 
-.projectH3 {
-  position: sticky;
-  top: 100px;
+li.projectFlex {
+  position: absolute;
+  min-height: 80vh;
+}
+li.projectFlex .projectDemo video {
+  width: 100%;
+}
+li.projectFlex .projectInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul.techList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+ul.techList li:not(last-child) {
+  padding-right: 20px;
 }
 
 section.contact {

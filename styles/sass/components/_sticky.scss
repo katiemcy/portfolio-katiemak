@@ -11,11 +11,16 @@ div.headerStickyView {
 }
 
 .aboutStickyView {
-    height: 4500px; //before: 6000px
+    height: 2800px;
     width: 100%;
     // transform: translateY(-$aboutTop);
 
+    .aboutSticky {
+        position: sticky;
+        top: 0;
+    }
 
+    // FIX THIS: not sticky anymore
     .leftSticky {
         // position: sticky;
         // top: $aboutTop;
@@ -27,15 +32,24 @@ div.headerStickyView {
     }
 }
 
+.projectStickyView {
+    height: 5000px;
+    .projectSticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+}
+
 // .contentSticky {
 //     position: sticky;
 //     top: calc($aboutTop + 285px);
 // }
 
-.projectSticky {
+// .projectSticky {
     // position: sticky;
     // top: $aboutTop;
-    height: 5000px;
+    // height: 5000px;
     // transform: translateY(-$aboutTop);
-}
+// }
 
