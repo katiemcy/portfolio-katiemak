@@ -349,7 +349,7 @@ ul.skillIcons {
 }
 
 ul.moreSkillsUl li {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .projects h5 {
@@ -886,8 +886,6 @@ ul.moreSkillsUl li:not(:last-child) {
 }
 .projects h5 {
   margin: 0;
-  padding-top: 15px;
-  border-top: 1px solid rgb(223, 223, 223);
 }
 
 li.projectLi {
@@ -910,28 +908,6 @@ li.projectLi .projectDemo video {
   width: 100%;
 }
 
-.linkUl {
-  width: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.linkUl a {
-  text-decoration: underline;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.linkUl a:hover {
-  scale: 1.2;
-  opacity: 1;
-}
-
 .projectWrapper {
   max-width: 1214px;
   margin: 0 auto;
@@ -950,9 +926,42 @@ li.projectLi .projectDemo video {
       -ms-flex-align: center;
           align-items: center;
   padding: 15px 0;
+  border-bottom: 1px solid rgb(223, 223, 223);
 }
 .projectInfo h4 {
   margin: 0 20px 0 0;
+}
+
+.linkFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 15px;
+}
+.linkFlex .linkUl {
+  width: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.linkFlex .linkUl a {
+  text-decoration: underline;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.linkFlex .linkUl a:hover {
+  scale: 1.2;
+  opacity: 1;
 }
 
 ul.techList {

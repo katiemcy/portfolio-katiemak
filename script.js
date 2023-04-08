@@ -14,7 +14,7 @@ const navLinks = document.querySelectorAll('#navList li a')
 const aside = document.querySelector('aside');
 const dimDiv = document.querySelector('#dim');
 const body = document.querySelector('body')
-const logo = document.querySelector('.left h2')
+const logo = document.querySelector('#logo')
 const contactIcons = document.querySelector('.right')
 
 const toggleMenu = () => {
@@ -105,7 +105,6 @@ function addAnimation (element, animation) {
 }
 
 const scrollListening = () => {
-    console.log("scrollscroll")
     // header page animation
         const header = document.querySelector('header');
         const footer = document.querySelector('footer');
@@ -127,7 +126,6 @@ const scrollListening = () => {
             
             navDiv.style.width = roundAsPercentString(navWidth);
             aside.style.height = "0";
-            navH2.style.opacity = "1";
     
             if (headerWidth < 100) {
                 header.style.width = roundAsPercentString(headerWidth);
@@ -141,7 +139,6 @@ const scrollListening = () => {
     
             navDiv.style.width = "0";
             aside.style.height = "65px";
-            navH2.style.opacity = "0";
     
         } else {
             header.style.width = "100%"

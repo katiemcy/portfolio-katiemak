@@ -7,8 +7,6 @@
 
     h5 {
         margin: 0;
-        padding-top: 15px;
-        border-top: 1px solid $borderGrey;
     }
 }
 
@@ -35,24 +33,6 @@ li.projectLi {
     }
 }
 
-.linkUl {
-    width: 100;
-    display: flex;
-    justify-content: space-between;
-
-    a {
-        text-decoration: underline;
-        height: fit-content;
-        transition: 0.5s;
-
-        &:hover {
-            scale: 1.2;
-            opacity: 1;
-        }
-    }
-}
-
-
 .projectWrapper {
     max-width: 1214px;
     margin: 0 auto;
@@ -63,9 +43,34 @@ li.projectLi {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    border-bottom: 1px solid $borderGrey;
     
     h4 {
         margin: 0 20px 0 0;
+    }
+}
+
+.linkFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+
+    .linkUl {
+        width: 100;
+        display: flex;
+    
+        a {
+            text-decoration: underline;
+            height: fit-content;
+            padding: 0 10px;
+            transition: 0.5s;
+    
+            &:hover {
+                scale: 1.2;
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -75,7 +80,6 @@ ul.techList {
     flex-wrap: wrap;
     width: max-content;
     max-width: 100%;
-    // margin-bottom: 15px;
 
     li:not(:last-child){
         padding-right: 20px;
