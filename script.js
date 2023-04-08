@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.scrollTo(0, 0);
 });
 
+
 // Hamburger Menu
     // *** COMING SOON ***
 const hamburger = document.querySelector('.hamburger');
@@ -79,20 +80,14 @@ navLinks.forEach(li => li.addEventListener('keydown', (event) => {
 }))
 
 // special link to home/skills section
-const homeLink = document.querySelector('.homeLink')
 const skillsLink = document.querySelector('.skillsLink')
 
 if (window.innerWidth > 768){
-    homeLink.addEventListener('click', function(){
-        window.scrollTo(0, 0);
-    })
     skillsLink.addEventListener('click', function(){
         window.scrollTo(0, 3700);
     })
-    homeLink.href = "javascript:void(0)"
     skillsLink.href = "javascript:void(0)"
 } else {
-    homeLink.href = "#"
     skillsLink.href = "#skills"
 }
 
@@ -148,7 +143,9 @@ const scrollListening = () => {
             aside.style.height = "65px";
             navH2.style.opacity = "0";
     
-        } 
+        } else {
+            header.style.width = "100%"
+        }
     // END: header page animation
     
     
@@ -241,19 +238,27 @@ function screenChange(x) {
 let x = window.matchMedia("(min-width: 768px)")
 screenChange(x); // Call listener function at run time
 
+
+let addEventFlag = false;
 window.addEventListener('resize', () => {
     const content2Div = document.querySelector('.content2');
-    const header = document.querySelector('header');
-
+    
     if (window.innerWidth > 768) {
-        window.addEventListener('scroll', scrollListening)
         if (!navDiv.style.width) {
             aside.style.height = "0";
         } else {
             aside.style.height = "65px";
         }
+
+        if (addEventFlag === false){
+            addEventFlag = true
+            window.addEventListener('scroll', scrollListening)
+        }
     } else {
-        window.removeEventListener('scroll', scrollListening)
+        if (addEventFlag){
+            addEventFlag = false
+            window.removeEventListener('scroll', scrollListening)
+        }
 
         content2Div.style.transform = "translateX(0)"
     }
