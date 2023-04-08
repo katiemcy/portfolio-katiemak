@@ -15,13 +15,19 @@
 <body>
     <aside>
         <div class="aside wrapper">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="left">
+                <div class="hamburger" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h2>MCY</h2>
             </div>
-            <h2>MCY</h2>
+            <div class="right">
+                <a href="https://www.github.com/katiemcy" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/katie-makcy/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
         </div>
     </aside>
 
@@ -46,13 +52,16 @@
                 </div>
             </header>
             
+            <div id="dim"></div>
+
             <div class="navDiv">
                 <div class="navWrap">
                     <nav>
                         <h2 class="navH2">MCY</h2> 
                         <ul id="navList">
-                            <li><a href="">Home</a></li>
+                            <li><a href="javascript:void(0)" class="homeLink">Home</a></li>
                             <li><a href="#aboutLink">About</a></li>
+                            <li><a href="javascript:void(0)" class="skillsLink">Skills</a></li>
                             <li><a href="#projectLink">Projects</a></li>
                             <li><a href="#contactLink">Contact</a></li>
                         </ul>
@@ -86,8 +95,8 @@
                             </ul> -->
                         </div>
                         
-                        <div class="content2">
-                            <h4>Languages & Tools</h3>
+                        <div class="content2" id="skills">
+                            <h4 >Languages & Tools</h3>
                             <ul class="skillIcons">
                                 <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="React icon"/> </li>
                                 <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Javascript icon"/></li>
@@ -110,74 +119,63 @@
             </div>
         </section>
     
-        <section class="projects projectStickyView" id="projectLink">
-            <div class="wrapper projectSticky">
+        <section class="projects" id="projectLink">
+            <div class="wrapper">
                 <h3 class="projectH3">Projects</h3>
-                <ul class="">
-                    <li class="projectFlex">
+                <ul>
+                    <li class="projectLi">
                         <div class="projectDemo">
-                            <video muted loop><source src="./media/track-mate-demo.MP4"></video>
-                        </div>
-                        <div class="projectInfo">
-                            <h4>TrackMate</h4>
-                            <ul class="techList">
-                                <li>HTML</li>
-                                <li>CSS & SASS</li>
-                                <li>Javascript</li>
-                                <li>Firebase</li>
-                                <li>Pair programming</li>
+                            <!-- <video muted loop><source src="./media/track-mate-demo.MP4"></video> -->
+                            <figure><img src="./media/moon-child.JPG" alt="screenshot of Moon Child web application"></figure>
+                            <ul class="linkUl">
+                                <li><a href="https://moon-child.netlify.app" class="liveLink" target="_blank">View Live</a></li>
+                                <li><a href="https://github.com/katiemcy/Moon-Child" class="repoLink" target="_blank">View Code</a></li>
                             </ul>
                         </div>
+                        <div class="projectWrapper">
+                            <div class="projectInfo">
+                                <h4>Moon Child</h4>
+                                <ul class="techList">
+                                    <li>React</li>
+                                    <li>Javascript</li>
+                                    <li>API</li>
+                                    <li>HTML</li>
+                                    <li>CSS & SASS</li>
+                                </ul>
+                            </div>
                             <h5>Features:</h5>
                             <ul class ="featureList">
-                                <li>Receive, modify and update user's data on Firebase</li>
-                                <li>Filter user's data and display on screen dynamically</li>
+                                <li>Error handling of user's birthday input</li>
+                                <li>Navigation bar animation</li>
                             </ul>
-                        
-                    </li>
-                    <li class="li2 projectFlex">
-                        <div class="projectDemo">
-                            <video muted loop><source src="./media/tasty.MP4"></video>
                         </div>
-                        <div class="projectInfo">
-                            <h4>Tasty</h4>
-                            <ul class="techList">
-                                <li>HTML</li>
-                                <li>CSS & SASS</li>
-                                <li>Javascript</li>
-                                <li>Firebase</li>
+                    </li>
+                    <li class="projectLi">
+                        <div class="projectDemo">
+                            <video muted loop><source src="./media/track-mate-demo.MP4" alt="demo of TrackMate web application"></video>
+                            <ul class="linkUl">
+                                <li><a href="https://trackmatebykatieandselda.netlify.app" class="liveLink" target="_blank">View Live</a></li>
+                                <li><a href="https://github.com/TrackMate-Project/TrackMate" class="repoLink" target="_blank">View Code</a></li>
                             </ul>
-                            <!-- <h5>Features:</h5> -->
+                        </div>
+                        <div class="projectWrapper">
+                            <div class="projectInfo">
+                                <h4>TrackMate</h4>
+                                <ul class="techList">
+                                    <li>Pair Programming</li>
+                                    <li>Javascript</li>
+                                    <li>Firebase</li>
+                                    <li>HTML</li>
+                                    <li>CSS & SASS</li>
+                                </ul>
+                            </div>
+                            <h5>Features:</h5>
                             <ul class="featureList">
                                 <li>Receive, modify and update user's data on Firebase</li>
                                 <li>Filter user's data and display on screen dynamically</li>
                             </ul>
                         </div>
                     </li>
-                    <li class="li3 projectFlex">
-                        <div class="projectDemo">
-                            <video muted loop><source src="./media/track-mate-demo.MP4"></video>
-                        </div>
-                        <div class="projectInfo">
-                            <h4>TrackMate</h4>
-                            <ul class="techList">
-                                <li>HTML</li>
-                                <li>CSS & SASS</li>
-                                <li>Javascript</li>
-                                <li>Firebase</li>
-                            </ul>
-                            <!-- <h5>Features:</h5> -->
-                            <ul class="featureList">
-                                <li>Receive, modify and update user's data on Firebase</li>
-                                <li>Filter user's data and display on screen dynamically</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- <li class="li4">
-                        <video muted><source src="./media/trackMate.MP4"></video>
-                        <h4>TrackMate</h4>
-                        <p>HTML| CSS & SASS | JAVASCRIPT | FIREBASE</p>
-                    </li> -->
                 </ul>
             </div>
         </section>
@@ -190,17 +188,24 @@
                     <div class="contactBanner">
                         <!-- contact page banner image -->
                     </div>
-                    <form class="contactForm" id="contactLink" action="submit">
+                    <form 
+                        class="contactForm" 
+                        id="contactLink"   
+                        action="https://formspree.io/f/mlekpkdz"
+                        method="POST"
+                    >
                         <label for="nameInput" class="sr-only">name</label>
-                        <input type="text" id="nameInput" placeholder="Name">
+                        <input type="text" id="nameInput" placeholder="Name" name="name">
             
                         <label for="emailInput" class="sr-only">email</label>
-                        <input type="email" id="emailInput" placeholder="Email">
+                        <input type="email" id="emailInput" placeholder="Email" name="email">
             
                         <label for="messageField" class="sr-only">message</label>
-                        <textarea type="text" id="messageField" placeholder="Message"></textarea>
-            
-                        <button>Send Message</button>
+                        <textarea type="text" id="messageField" placeholder="Message" name="message"></textarea>
+                        
+                        <p id="my-form-status"></p>
+
+                        <button type="submit" class="submitBut">Send Message</button>
                     </form>
                 </div>
             </div>

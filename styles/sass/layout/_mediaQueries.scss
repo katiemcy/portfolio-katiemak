@@ -14,6 +14,10 @@
         width: 0;
     }
 
+    .scroll-downs {
+        display: none;
+    }
+
 // About Section
     .aboutFlex {
         flex-direction: column;
@@ -48,6 +52,12 @@
             }
         }
     }
+
+    .content2 {
+        position: static;
+        width: 100%;
+        transform: translateX(0);
+    }
         
 
 // Projects Section
@@ -55,16 +65,10 @@
         transform: translateY(0);
         height: fit-content;
         padding-bottom: 80px;
+    }
 
-        h3 {
-            position: static;
-        }
-
-        ul li {
-            margin: 0 auto;
-            position: static;
-            margin: 0 auto;
-        }
+    li.projectLi {
+        margin: 0;
     }
 
 // Contact Section

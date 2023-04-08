@@ -4,67 +4,89 @@
     h3 {
         padding-top: 100px;
     }
+
     h5 {
         margin: 0;
+        padding-top: 15px;
+        border-top: 1px solid $borderGrey;
     }
 }
 
-li.projectFlex {
-    // display: flex;
-    // align-items: center;
-    position: absolute;
-    min-height: 80vh;
+li.projectLi {
+    min-height: 70vh;
+    margin-bottom: 130px;
 
     .projectDemo {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+
+        figure {
+            img {
+                max-height: 70vh;
+                margin: 0 auto;
+            }
+        }
+
         video {
+            max-height: 70vh;
             width: 100%;
         }
     }
-    .projectInfo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
 }
+
+.linkUl {
+    width: 100;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        text-decoration: underline;
+        height: fit-content;
+        transition: 0.5s;
+
+        &:hover {
+            scale: 1.2;
+            opacity: 1;
+        }
+    }
+}
+
+
+.projectWrapper {
+    max-width: 1214px;
+    margin: 0 auto;
+}
+.projectInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    
+    h4 {
+        margin: 0 20px 0 0;
+    }
+}
+
 
 ul.techList {
     display: flex;
-    li:not(last-child){
+    flex-wrap: wrap;
+    width: max-content;
+    max-width: 100%;
+    // margin-bottom: 15px;
+
+    li:not(:last-child){
         padding-right: 20px;
-        // border-width: 0 1px 0 0;
-        // border-style: solid;
-        // border-color: $emGrey;
     }
 }
 
-// ul.featureList {
-//     li {
-//         text-align: center;
-//     }
-// }
-// .animatedUl {
-//     li {
-//         position: sticky;
-//         // top: calc($aboutTop + 20vh);
-//         top: 20vh;
-//         transition: 1s ease-out;
+ul.featureList {
+    li {
+        list-style: disc;
+        list-style-position: inside;
+    }
+}
 
-//         h4,
-//         p {
-//             margin: 0;
-//             padding: 10px auto;
-//         }
-//     }
-// }
 
-// .projectH3 {
-    // position: sticky;
-    // top: calc($aboutTop + 100px);
-    // top: 100px;
-// }
-
-// .li2 {
-//     transform: translateY(calc(-70vh - 200px));
-// }
-//  -843.3px

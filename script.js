@@ -1,21 +1,105 @@
 const html = document.documentElement;
 
+// set to top of page on refresh
+document.addEventListener("DOMContentLoaded", function() {
+    window.scrollTo(0, 0);
+});
+
 // Hamburger Menu
     // *** COMING SOON ***
 const hamburger = document.querySelector('.hamburger');
 const navDiv = document.querySelector('.navDiv');
+const navLinks = document.querySelectorAll('#navList li a')
+const aside = document.querySelector('aside');
+const dimDiv = document.querySelector('#dim');
+const body = document.querySelector('body')
+const logo = document.querySelector('.left h2')
+const contactIcons = document.querySelector('.right')
 
-hamburger.addEventListener('click', function(){
-    this.classList.toggle('open')
+const toggleMenu = () => {
+    hamburger.classList.toggle('open')
     navDiv.classList.toggle('openMenu')
+    dimDiv.classList.toggle('dim')
+    body.classList.toggle('stopScrolling')
 
-    navDiv.style.width = "30%";
+    if (logo.style.visibility === 'hidden') {
+        logo.style.visibility = ''
+    } else {
+        logo.style.visibility = 'hidden'
+    }
+    
+    if (contactIcons.style.visibility === 'hidden') {
+        contactIcons.style.visibility = ''
+    } else {
+        contactIcons.style.visibility = 'hidden'
+    }
+    
+    if (window.innerWidth > 768) {
+        if (navDiv.style.width === "30%") {
+            navDiv.style.width = "0%";
+        } else {
+            navDiv.style.width = "30%";
+        }
+    } else {
+        if (navDiv.style.width === "100%") {
+            navDiv.style.width = "0%";
+        } else {
+            navDiv.style.width = "100%";
+        }
+    }
+}
 
-    // navDiv.style.position = "fixed";
+const closeMenu = () => {
+    navDiv.style.width = "0%"
+    logo.style.visibility = ''
+    contactIcons.style.visibility = ''
+
+    hamburger.classList.remove('open')
+    navDiv.classList.remove('openMenu')
+    dimDiv.classList.remove('dim')
+    body.classList.remove('stopScrolling')
+
+    if (aside.style.height = "0px") {
+        aside.style.height = "65px";
+    }
+}
+
+hamburger.addEventListener('click', toggleMenu)
+hamburger.addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        toggleMenu()
+    }
 })
+
+navLinks.forEach(li => li.addEventListener('click', closeMenu))
+navLinks.forEach(li => li.addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        closeMenu()
+    }
+}))
+
+// special link to home/skills section
+const homeLink = document.querySelector('.homeLink')
+const skillsLink = document.querySelector('.skillsLink')
+
+if (window.innerWidth > 768){
+    homeLink.addEventListener('click', function(){
+        window.scrollTo(0, 0);
+    })
+    skillsLink.addEventListener('click', function(){
+        window.scrollTo(0, 3700);
+    })
+    homeLink.href = "javascript:void(0)"
+    skillsLink.href = "javascript:void(0)"
+} else {
+    homeLink.href = "#"
+    skillsLink.href = "#skills"
+}
 
 // END: Hamburger Menu
 
+
+// Scrolling Animations
 function roundAsPercentString (num) {
     const roundedNum = num.toFixed(2);
     return roundedNum + "%";
@@ -25,10 +109,8 @@ function addAnimation (element, animation) {
     element.style.animation = animation
 }
 
-// Scrolling Animations
-const aside = document.querySelector('aside');
-
 const scrollListening = () => {
+    console.log("scrollscroll")
     // header page animation
         const header = document.querySelector('header');
         const footer = document.querySelector('footer');
@@ -36,7 +118,7 @@ const scrollListening = () => {
 
         const headerStickyView = document.querySelector('.headerStickyView');
     
-        // reference: https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
+    // reference: https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/
         const scrollPosition = html.scrollTop;
         // maxScrollTop is the height of headerStickyView before it starts to leave the window
         // const maxScrollTop = headerStickyView.scrollHeight - window.innerHeight;
@@ -60,7 +142,7 @@ const scrollListening = () => {
     
             footer.style.display = "block";
                 
-        } else {
+        } else if (headerScrollFraction > 0.39 && headerScrollFraction <= 1) {
     
             navDiv.style.width = "0";
             aside.style.height = "65px";
@@ -69,42 +151,11 @@ const scrollListening = () => {
         } 
     // END: header page animation
     
-
-    // Fun Fact list slide in animation
-        const aboutStickyView = document.querySelector('.aboutStickyView');
-
-        const aboutScrollFraction = (scrollPosition - 2500) / aboutStickyView.scrollHeight;
     
-        // const aboutMaxScroll = aboutStickyView.scrollHeight - window.innerHeight;
-        // // 1800 is the height of scroll space until about section comes to sight
-        //     // aboutScrollFraction = 0 means the about section just arrives top of viewport
-        //     // when aboutScrollFraction starts to > 1, the about section starts to leave viewport
-        // const aboutScrollFraction = (scrollPosition - 1800) / aboutMaxScroll;
-    
-        // const aboutMeLi = document.querySelector('.aboutMeUl').children;
-        // const aboutMeLiArray = Array.from(aboutMeLi);
-    
-        // const kickInPoint = [
-        //     0.10,
-        //     0.18,
-        //     0.26
-        // ]
-    
-        // const slideInAnimation = (kickInPoint, li) => {
-        //     if (aboutScrollFraction > kickInPoint) {
-        //         li.style.transform = "translateX(0)"
-        //     } else {
-        //         li.style.transform = "translateX(-120%)"
-        //     }
-        // }
-    
-        // for (let i = 0; i < kickInPoint.length; i++) {
-        //     slideInAnimation(kickInPoint[i], aboutMeLiArray[i])
-        // }
-    // END: list slide in animation
-    
-
     // Languages & tools slide in animation
+        const aboutStickyView = document.querySelector('.aboutStickyView');
+        const aboutScrollFraction = (scrollPosition - 2500) / aboutStickyView.scrollHeight;
+
         const content1Div = document.querySelector('.content1');
         const content2Div = document.querySelector('.content2');
     
@@ -115,66 +166,66 @@ const scrollListening = () => {
     
         const translateFraction =  (aboutScrollFraction - fractionPoint.startPoint) / (fractionPoint.endPoint - fractionPoint.startPoint);
         // translateNum for content1
-        const translateNum1 = translateFraction * 120
+        const translateNum1 = translateFraction * 140
         // translateNum for content2 
-        const translateNum2 = ( 1 - translateFraction ) * 120;
+        const translateNum2 = ( 1 - translateFraction ) * 140;
         const translatePercentage1 = roundAsPercentString(translateNum1);
         const translatePercentage2 = roundAsPercentString(translateNum2)
         ;
     
         if (aboutScrollFraction < fractionPoint.startPoint ) {
             content1Div.style.transform = "translateX(0)"
-            content2Div.style.transform = "translateX(120%)"
+            content2Div.style.transform = "translateX(140%)"
         } else if (aboutScrollFraction >= fractionPoint.startPoint && aboutScrollFraction <= fractionPoint.endPoint) {
             
             content1Div.style.transform = `translateX(-${translatePercentage1})`
             content2Div.style.transform = `translateX(${translatePercentage2})`
     
         } else {
-            content1Div.style.transform = "translateX(-120%)"
+            content1Div.style.transform = "translateX(-140%)"
             content2Div.style.transform = "translateX(0)"
         }
     
-    // Fix Say-Hi and contact form to top
-        const sayHiDiv = document.querySelector('.sayHi')
-        const getInTouchDiv = document.querySelector('.getInTouchDiv')
+
+    // // Fix Say-Hi and contact form to top
+    //     const sayHiDiv = document.querySelector('.sayHi')
+    //     const getInTouchDiv = document.querySelector('.getInTouchDiv')
     
-        const fixToTop = (element) => {
-            element.style.position = 'fixed';
-            element.style.top = '0';
-        }
+    //     const fixToTop = (element) => {
+    //         element.style.position = 'fixed';
+    //         element.style.top = '0';
+    //     }
     
-        const resetPosition = (element) => {
-            element.style.position = '';
-            element.style.top = '';
-        }
+    //     const resetPosition = (element) => {
+    //         element.style.position = '';
+    //         element.style.top = '';
+    //     }
     
-        // when window.scrollY = abosoluteDiv.top, the absoluteDiv just arrived top of viewport
-        if (window.scrollY >= 9587) {
-            fixToTop(sayHiDiv);
-            fixToTop(getInTouchDiv);
-        } else {
-            resetPosition(sayHiDiv);
-            resetPosition(getInTouchDiv);
-        }
+    //     // when window.scrollY = abosoluteDiv.top, the absoluteDiv just arrived top of viewport
+    //     if (window.scrollY >= 9587) {
+    //         fixToTop(sayHiDiv);
+    //         fixToTop(getInTouchDiv);
+    //     } else {
+    //         resetPosition(sayHiDiv);
+    //         resetPosition(getInTouchDiv);
+    //     }
     
-    // Say-Hi fade out effect
-        if (window.scrollY >= 9850) {
-            sayHiDiv.style.opacity = "0";
-            setTimeout(() => {
-                sayHiDiv.style.visibility = 'hidden'
-            }, 1500) // duration depends on sayHi transition time
-        } else {
-            sayHiDiv.style.opacity = "1";
-            sayHiDiv.style.visibility = 'visible'
-        }
+    // // Say-Hi fade out effect
+    //     if (window.scrollY >= 9850) {
+    //         sayHiDiv.style.opacity = "0";
+    //         setTimeout(() => {
+    //             sayHiDiv.style.visibility = 'hidden'
+    //         }, 1500) // duration depends on sayHi transition time
+    //     } else {
+    //         sayHiDiv.style.opacity = "1";
+    //         sayHiDiv.style.visibility = 'visible'
+    //     }
 }
 
-    // depends on initial screen size only
+// depends on initial screen size only
 function screenChange(x) {
     if (x.matches) { // If media query matches
-        window.addEventListener('scroll', scrollListening, true);
-
+        window.addEventListener('scroll', scrollListening, true);                                           
     // top nav bar slide-in/ slide-out
         if (!navDiv.style.width) {
             aside.style.height = "0";
@@ -190,6 +241,25 @@ function screenChange(x) {
 let x = window.matchMedia("(min-width: 768px)")
 screenChange(x); // Call listener function at run time
 
+window.addEventListener('resize', () => {
+    const content2Div = document.querySelector('.content2');
+    const header = document.querySelector('header');
+
+    if (window.innerWidth > 768) {
+        window.addEventListener('scroll', scrollListening)
+        if (!navDiv.style.width) {
+            aside.style.height = "0";
+        } else {
+            aside.style.height = "65px";
+        }
+    } else {
+        window.removeEventListener('scroll', scrollListening)
+
+        content2Div.style.transform = "translateX(0)"
+    }
+})
+
+
 // END: Scrolling Animations
   
 
@@ -202,3 +272,53 @@ videos.forEach(function(v){
     })
 })
 // END: Play video on hover
+
+
+// Contact Form submission
+const form = document.querySelector(".contactForm");
+async function handleSubmit(event) {
+    event.preventDefault();
+
+    const status = document.getElementById("my-form-status");
+    const data = new FormData(event.target);
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const messageField = document.getElementById('messageField');
+
+    if (nameInput.value.trim()!=="" && emailInput.value.trim()!=="" && messageField.value.trim()!=="" ) {
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                status.innerHTML = "Thanks for your submission!";
+                form.reset()
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    } else {
+                        status.innerHTML = "Oops! There was a problem submitting your form"
+                    }
+                })
+            }
+        }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+    } else {
+        status.innerHTML = "Please don't leave field empty!"
+    }
+}
+
+form.addEventListener("submit", handleSubmit)
+
+
+// clear form after submission
+window.onbeforeunload = () => {
+    for(const form of document.getElementsByTagName('form')) {
+      form.reset();
+    }
+  }

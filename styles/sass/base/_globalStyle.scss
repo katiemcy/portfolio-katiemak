@@ -30,7 +30,8 @@ figure {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
     display: block;
 }
 
@@ -46,6 +47,6 @@ a {
 .wrapper {
     height: 100%;
     width: 85%;
-    max-width: 1250px;
+    max-width: 1440px;
     margin: 0 auto;
 }

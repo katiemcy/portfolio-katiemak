@@ -38,7 +38,6 @@ h4 {
     @include fontSize(25);
     font-family: $montserrat;
     font-weight: 700;
-    margin: 10px 0;
 }
 
 
@@ -90,9 +89,12 @@ ul.skillIcons {
 
 ul.moreSkillsUl li {
     @include fontSize(25);
-    
 }
- 
+
+.projects h5 {
+    @include fontSize(18);
+}
+
 .sayHi h3{
     @include fontSize(115);
     font-family: $lobster;

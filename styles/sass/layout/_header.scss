@@ -5,6 +5,7 @@ div.introFlexRow {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    z-index: 1;
 }
 
 header {
@@ -55,11 +56,11 @@ div.profilePic {
 .scroll-downs {
     position: absolute;
     bottom: -1px;
-    left: 50%;
+    left: 60%;
     margin: auto;
     width : 34px;
     height: 55px;
-  }
+}
 .mousey {
     width: 3px;
     padding: 8px 15px;

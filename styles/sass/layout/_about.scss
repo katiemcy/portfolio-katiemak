@@ -1,5 +1,9 @@
 @use "../variables" as *;
 
+main {
+    position: relative;
+}
+
 .aboutFlex {
     display: flex;
     justify-content: flex-end;
@@ -17,7 +21,7 @@ section.about {
     background-color: rgba(255, 255, 255, 0.918);
     width: 50%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     overflow-x: clip;
     top: 0;
     transition: 2s;
@@ -29,16 +33,11 @@ section.about {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 720px;
     height: 100%;
     padding: 0 7.5%;
-    // border: 2px solid red;
 
     .aboutTitle {
-        // same height as .leftSticky
-        // height: 1000px;
-        // position: sticky;
-        // top: $aboutTop;
-        // top: 0;
         border-style: solid;
         border-width: 0 0 1px 0;
         border-color: $borderGrey;
@@ -52,14 +51,14 @@ section.about {
 }
 
 .content1{
-    // height: 700px;
     transition: 0.3s ease-out;
 
     p.aboutText {
         border-style: solid;
         border-width: 0 0 1px 0;
         border-color: $borderGrey;
-        padding: 15px 0;
+        margin: 0;
+        padding: 30px 0;
     }
 
     ul {
@@ -72,36 +71,32 @@ section.about {
 }
 
 .content2 {
-    // height of .leftSticky - height of .aboutTitle
-    // height: 715px;
-    transition: 0.3s ease-out;
     position: absolute;
+    width: 85%;
     top: 28%;
+    transition: 0.3s ease-out;
+    transform: translateX(140%);
 
     h4 {
-        margin: 20px 0 40px 0;
+        padding: 25px 0 40px 0;
     }
     ul.skillIcons {
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
 
         &>li:not(.andMoreLi) {
-            color: $gold;
             text-align: center;
             margin: 10px;
-            width: 22%;
-            
-            i {
-                font-size: 5rem;
-            }
+            width: 20%;
         }
 
         li.andMoreLi {
             width: 100%;
-            // color: $gold;
             margin-top: 20px;
+            text-align: center;
         }
     }
 }
@@ -109,7 +104,6 @@ section.about {
 ul.moreSkillsUl {
     display: flex;
     flex-wrap: wrap;
-    // width: max-content;
 
     li {
         margin-top: 20px;
@@ -118,7 +112,6 @@ ul.moreSkillsUl {
 
     li:not(:last-child) {
         border-width: 0 1px 0 0;
-        border-color: $gold;
         border-style: solid;
     }
 
