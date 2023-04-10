@@ -160,23 +160,23 @@ const scrollListening = () => {
     
         const translateFraction =  (aboutScrollFraction - fractionPoint.startPoint) / (fractionPoint.endPoint - fractionPoint.startPoint);
         // translateNum for content1
-        const translateNum1 = translateFraction * 140
+        const translateNum1 = translateFraction * 150
         // translateNum for content2 
-        const translateNum2 = ( 1 - translateFraction ) * 140;
+        const translateNum2 = ( 1 - translateFraction ) * 150;
         const translatePercentage1 = roundAsPercentString(translateNum1);
         const translatePercentage2 = roundAsPercentString(translateNum2)
         ;
     
         if (aboutScrollFraction < fractionPoint.startPoint ) {
             content1Div.style.transform = "translateX(0)"
-            content2Div.style.transform = "translateX(140%)"
+            content2Div.style.transform = "translateX(150%)"
         } else if (aboutScrollFraction >= fractionPoint.startPoint && aboutScrollFraction <= fractionPoint.endPoint) {
             
             content1Div.style.transform = `translateX(-${translatePercentage1})`
             content2Div.style.transform = `translateX(${translatePercentage2})`
     
         } else {
-            content1Div.style.transform = "translateX(-140%)"
+            content1Div.style.transform = "translateX(-150%)"
             content2Div.style.transform = "translateX(0)"
         }
     

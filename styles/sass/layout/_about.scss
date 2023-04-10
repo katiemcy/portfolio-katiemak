@@ -37,7 +37,7 @@ section.about {
     width: 100%;
     max-width: 720px;
     height: 100%;
-    padding: 0 7.5%;
+    margin: 0 7.5%;
 
     .aboutTitle {
         border-style: solid;
@@ -75,7 +75,7 @@ section.about {
 .content2 {
     position: absolute;
     width: 85%;
-    top: 28%;
+    top: 284px;
     transition: 0.3s ease-out;
     transform: translateX(140%);
 
