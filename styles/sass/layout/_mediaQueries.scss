@@ -19,38 +19,33 @@
     }
 
 // About Section
-    .aboutFlex {
-        flex-direction: column;
+    section.about {
+        background-color: $bgColor;
+        width: 100%;
+
     }
 
+    .aboutRightSide {
+        padding: 10px 7.5% 40px 7.5%;
+    }
+    
+    .aboutTitle {
+        height: fit-content;
+        h3 {
+            margin-top: 50px;
+        }
+    }
     .aboutStickyView {
         height: fit-content;
-        transform: translateY(0);
 
-        .leftSticky,
         .aboutTitle,
         .contentSticky {
             position: static;
         }
-
-        .leftSticky,
-        section.about {
-            width: 100%;
-        }
-
-        .leftSticky {
-            height: 400px;
-        }
     }
-
-    section.about {
-        background-color: $bgColor;
-        .aboutTitle {
-            height: fit-content;
-            h3 {
-                margin-top: 50px;
-            }
-        }
+        
+    .aboutFlex {
+        flex-direction: column;
     }
 
     .content2 {
