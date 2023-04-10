@@ -20,13 +20,12 @@
 
 // About Section
     section.about {
-        background-color: $bgColor;
         width: 100%;
 
     }
 
     .aboutRightSide {
-        padding: 10px 7.5% 40px 7.5%;
+        padding: 10px 0 40px 9;
     }
     
     .aboutTitle {
@@ -36,6 +35,7 @@
         }
     }
     .aboutStickyView {
+        background-color: rgba(255, 255, 255, 0.918);
         height: fit-content;
 
         .aboutTitle,
@@ -51,6 +51,7 @@
     .content2 {
         position: static;
         width: 100%;
+        padding-bottom: 50px;
         transform: translateX(0);
     }
         
