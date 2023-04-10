@@ -329,6 +329,11 @@ textarea {
   font-family: "Montserrat", sans-serif;
 }
 
+.aboutText {
+  font-family: "Montserrat", sans-serif;
+  line-height: 32px;
+}
+
 .content1 li {
   font-size: 1.75rem;
   font-family: "Mulish", sans-serif;
@@ -350,6 +355,8 @@ ul.skillIcons {
 
 ul.moreSkillsUl li {
   font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .projects h5 {
@@ -362,11 +369,6 @@ ul.moreSkillsUl li {
   text-align: center;
   letter-spacing: 3px;
   color: rgba(235, 163, 163, 0.7);
-}
-
-.aboutText {
-  font-family: "Montserrat", sans-serif;
-  line-height: 32px;
 }
 
 div.navDiv {
@@ -837,7 +839,7 @@ section.about {
           transform: translateX(140%);
 }
 .content2 h4 {
-  padding: 25px 0 40px 0;
+  padding: 25px 0 0 0;
 }
 .content2 ul.skillIcons {
   width: 100%;
@@ -868,11 +870,15 @@ ul.moreSkillsUl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 20px;
 }
 ul.moreSkillsUl li {
-  margin-top: 20px;
+  margin: 2px 0;
   padding: 0 15px;
 }
 ul.moreSkillsUl li:not(:last-child) {
@@ -911,6 +917,9 @@ li.projectLi .projectDemo video {
   max-width: 1214px;
   margin: 0 auto;
 }
+.projectWrapper p {
+  margin: 8px 0;
+}
 
 .projectInfo {
   display: -webkit-box;
@@ -931,34 +940,27 @@ li.projectLi .projectDemo video {
   margin: 0 20px 0 0;
 }
 
-.linkFlex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 15px 0;
-}
-.linkFlex .linkUl {
+.linkUl {
   width: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
 }
-.linkFlex .linkUl a {
+.linkUl a {
   text-decoration: underline;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin: 0 0 0 30px;
   padding: 0 10px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.linkFlex .linkUl a:hover {
+.linkUl a:hover {
   scale: 1.2;
   opacity: 1;
 }

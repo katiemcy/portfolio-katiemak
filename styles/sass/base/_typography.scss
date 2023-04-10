@@ -67,6 +67,11 @@ textarea {
     font-family: $montserrat;
 }
 
+.aboutText {
+    font-family: $montserrat;
+    line-height: 32px;
+}
+
 .content1 li {
     @include fontSize(35);
     font-family: $muli;
@@ -89,6 +94,8 @@ ul.skillIcons {
 
 ul.moreSkillsUl li {
     @include fontSize(20);
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .projects h5 {
@@ -103,7 +110,3 @@ ul.moreSkillsUl li {
     color: rgba(235, 163, 163, 0.7);
 }
 
-.aboutText {
-    font-family: $montserrat;
-    line-height: 32px;
-}

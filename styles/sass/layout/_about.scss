@@ -80,7 +80,7 @@ section.about {
     transform: translateX(140%);
 
     h4 {
-        padding: 25px 0 40px 0;
+        padding: 25px 0 0 0;
     }
     ul.skillIcons {
         width: 100%;
@@ -105,10 +105,12 @@ section.about {
 
 ul.moreSkillsUl {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 20px;
 
     li {
-        margin-top: 20px;
+        margin: 2px 0;
         padding: 0 15px;
     }
 

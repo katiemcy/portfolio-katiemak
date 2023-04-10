@@ -36,7 +36,11 @@ li.projectLi {
 .projectWrapper {
     max-width: 1214px;
     margin: 0 auto;
+    p {
+        margin: 8px 0;
+    }
 }
+
 .projectInfo {
     display: flex;
     flex-wrap: wrap;
@@ -50,30 +54,25 @@ li.projectLi {
     }
 }
 
-.linkFlex {
+.linkUl {
+    width: 100;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
+    justify-content: flex-end;
+    padding: 0;
 
-    .linkUl {
-        width: 100;
-        display: flex;
-    
-        a {
-            text-decoration: underline;
-            height: fit-content;
-            padding: 0 10px;
-            transition: 0.5s;
-    
-            &:hover {
-                scale: 1.2;
-                opacity: 1;
-            }
+    a {
+        text-decoration: underline;
+        height: fit-content;
+        margin: 0 0 0 30px;
+        padding: 0 10px;
+        transition: 0.5s;
+
+        &:hover {
+            scale: 1.2;
+            opacity: 1;
         }
     }
 }
-
 
 ul.techList {
     display: flex;
