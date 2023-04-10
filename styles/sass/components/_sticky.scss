@@ -19,17 +19,6 @@ div.headerStickyView {
         position: sticky;
         top: 0;
     }
-
-    // FIX THIS: not sticky anymore
-    .leftSticky {
-        // position: sticky;
-        // top: $aboutTop;
-        top: 0;
-        height: 1000px;
-        width: 50%;
-        z-index: 1;
-        transition: 2s;
-    }
 }
 
 .projectStickyView {
@@ -41,15 +30,4 @@ div.headerStickyView {
     }
 }
 
-// .contentSticky {
-//     position: sticky;
-//     top: calc($aboutTop + 285px);
-// }
-
-// .projectSticky {
-    // position: sticky;
-    // top: $aboutTop;
-    // height: 5000px;
-    // transform: translateY(-$aboutTop);
-// }
 
