@@ -356,7 +356,6 @@ ul.skillIcons {
 ul.moreSkillsUl li {
   font-size: 1rem;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .projects h5 {
@@ -1135,6 +1134,20 @@ form.contactForm p {
   }
   li.projectLi {
     margin: 50px 0;
+  }
+  ul.techList {
+    margin-top: 5px;
+  }
+  ul.linkUl {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  ul.linkUl li {
+    margin: 20px 0;
+  }
+  ul.linkUl li a {
+    margin: 0;
   }
   section.contact {
     position: static;

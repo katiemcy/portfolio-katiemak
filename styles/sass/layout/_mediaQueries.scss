@@ -66,6 +66,22 @@
         margin: 50px 0;
     }
 
+    ul.techList {
+        margin-top: 5px;
+    }
+
+    ul.linkUl {
+        justify-content: center;
+
+        li {
+            margin: 20px 0;
+            a {
+                margin: 0;
+            }
+        }
+
+    }
+
 // Contact Section
     section.contact {
         position: static;
