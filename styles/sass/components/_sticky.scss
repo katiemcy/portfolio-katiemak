@@ -30,4 +30,11 @@ div.headerStickyView {
     }
 }
 
+.contactStickyView {
+    height: 2000px;
+    .sayHiSticky {
+        position: sticky;
+        top: 0;
+    }
+}
 

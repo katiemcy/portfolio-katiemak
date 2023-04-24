@@ -465,6 +465,14 @@ div.headerStickyView {
   height: 100vh;
 }
 
+.contactStickyView {
+  height: 2000px;
+}
+.contactStickyView .sayHiSticky {
+  position: sticky;
+  top: 0;
+}
+
 aside {
   position: fixed;
   height: 0;
@@ -591,7 +599,7 @@ div.headerFlex {
 }
 
 div.profilePic {
-  background-image: url(../media/profile-pic.jpg);
+  background-image: url(../media/profile-pic3.jpg);
   background-position: center;
   background-size: 110%;
   background-repeat: no-repeat;
@@ -989,6 +997,7 @@ section.contact {
 }
 
 .sayHi {
+  position: sticky;
   background-image: url(../media/sayHiBg.jpg);
   background-size: cover;
   background-position: center;
@@ -1006,6 +1015,7 @@ section.contact {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
+  top: 0;
   -webkit-transition: 1.5s;
   transition: 1.5s;
 }

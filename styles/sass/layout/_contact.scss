@@ -8,6 +8,7 @@ section.contact {
 }
 
 .sayHi {
+    position: sticky;
     background-image: url(../media/sayHiBg.jpg);
     background-size: cover;
     background-position: center;
@@ -20,6 +21,7 @@ section.contact {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    top: 0;
     transition: 1.5s;
 }
 

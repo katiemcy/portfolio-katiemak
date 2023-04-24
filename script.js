@@ -179,41 +179,45 @@ const scrollListening = () => {
             content1Div.style.transform = "translateX(-150%)"
             content2Div.style.transform = "translateX(0)"
         }
-    
+        
+        console.log("scrollPosition", scrollPosition);
 
     // // Fix Say-Hi and contact form to top
-    //     const sayHiDiv = document.querySelector('.sayHi')
-    //     const getInTouchDiv = document.querySelector('.getInTouchDiv')
+        const sayHiDiv = document.querySelector('.sayHi')
+        const contactStickyView = document.querySelector('.contactStickyView')
+        const getInTouchDiv = document.querySelector('.getInTouchDiv')
+
+        const maxScrollTop = contactStickyView.scrollHeight - window.innerHeight;
+        const contactScrollFraction = (scrollPosition - 8492) / maxScrollTop;
+
+        console.log("contactScrollFraction", contactScrollFraction)
     
-    //     const fixToTop = (element) => {
-    //         element.style.position = 'fixed';
-    //         element.style.top = '0';
-    //     }
+        const fixToTop = (element) => {
+            element.style.position = 'fixed';
+            element.style.top = '0';
+        }
     
-    //     const resetPosition = (element) => {
-    //         element.style.position = '';
-    //         element.style.top = '';
-    //     }
+        const resetPosition = (element) => {
+            element.style.position = '';
+            element.style.top = '';
+        }
     
-    //     // when window.scrollY = abosoluteDiv.top, the absoluteDiv just arrived top of viewport
-    //     if (window.scrollY >= 9587) {
-    //         fixToTop(sayHiDiv);
-    //         fixToTop(getInTouchDiv);
-    //     } else {
-    //         resetPosition(sayHiDiv);
-    //         resetPosition(getInTouchDiv);
-    //     }
+        if (contactScrollFraction >= 0) {
+            fixToTop(getInTouchDiv);
+        } else {
+            resetPosition(getInTouchDiv);
+        }
     
-    // // Say-Hi fade out effect
-    //     if (window.scrollY >= 9850) {
-    //         sayHiDiv.style.opacity = "0";
-    //         setTimeout(() => {
-    //             sayHiDiv.style.visibility = 'hidden'
-    //         }, 1500) // duration depends on sayHi transition time
-    //     } else {
-    //         sayHiDiv.style.opacity = "1";
-    //         sayHiDiv.style.visibility = 'visible'
-    //     }
+    // Say-Hi fade out effect
+        if (contactScrollFraction >= 0.3) {
+            sayHiDiv.style.opacity = "0";
+            setTimeout(() => {
+                sayHiDiv.style.visibility = 'hidden'
+            }, 1500) // duration depends on sayHi transition time
+        } else {
+            sayHiDiv.style.opacity = "1";
+            sayHiDiv.style.visibility = 'visible'
+        }
 }
 
 // depends on initial screen size only
