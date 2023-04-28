@@ -1,7 +1,7 @@
 @use "../variables" as *;
 
 section.contact {
-    // position: absolute;
+    position: relative;
     // height: calc(100vh - 65px);
     width: 100%;
     // top: 9587px;
@@ -15,19 +15,21 @@ section.contact {
     background-attachment: fixed;
     height: 100vh;
     width: 100%;
-    // border: 2px solid pink;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition: 1.5s;
+    transition: 1s;
+    opacity: 1;
 }
 
 .getInTouchDiv {
+    position: absolute;
     background-color: $bgColor;
     min-height: 100vh;
     width: 100%;
     padding-bottom: 50px;
+    top: 0;
 
     h3 {
         padding: 100px 0 0 0;
