@@ -96,10 +96,18 @@
         display: none;
     }
 
+    
     .getInTouchDiv {
         position: static;
+        background-color: white;
     }
-
+    
+    form.contactForm {
+        input,
+        textarea {
+            background-color: white;
+        }
+    }
 }
 
 @media (max-width: 650px) {

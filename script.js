@@ -218,9 +218,7 @@ const scrollListening = () => {
                     sayHiFlag = false
                     resetPosition(getInTouchDiv)
                 }, 1000) // duration depends on sayHi transition time
-        } else {
-            console.log ("hi!")
-        }
+        } 
 }
 
 // depends on initial screen size only

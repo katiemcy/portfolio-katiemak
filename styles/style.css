@@ -1175,6 +1175,11 @@ form.contactForm p {
   }
   .getInTouchDiv {
     position: static;
+    background-color: white;
+  }
+  form.contactForm input,
+  form.contactForm textarea {
+    background-color: white;
   }
 }
 @media (max-width: 650px) {
