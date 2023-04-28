@@ -104,6 +104,8 @@ function addAnimation (element, animation) {
     element.style.animation = animation
 }
 
+let sayHiFlag = false;
+
 const scrollListening = () => {
     // header page animation
         const header = document.querySelector('header');
@@ -184,10 +186,11 @@ const scrollListening = () => {
 
     // // Fix Say-Hi and contact form to top
         const sayHiDiv = document.querySelector('.sayHi')
-        const contactStickyView = document.querySelector('.contactStickyView')
+        // const contactStickyView = document.querySelector('.contactStickyView')
         const getInTouchDiv = document.querySelector('.getInTouchDiv')
+        const contactSection = document.querySelector('.contact')
 
-        const maxScrollTop = contactStickyView.scrollHeight - window.innerHeight;
+        const maxScrollTop = contactSection.scrollHeight - window.innerHeight;
         const contactScrollFraction = (scrollPosition - 8492) / maxScrollTop;
 
         console.log("contactScrollFraction", contactScrollFraction)
@@ -202,21 +205,21 @@ const scrollListening = () => {
             element.style.top = '';
         }
     
-        if (contactScrollFraction >= 0) {
+        if (contactScrollFraction >= 0 && sayHiFlag === false) {
             fixToTop(getInTouchDiv);
-        } else {
-            resetPosition(getInTouchDiv);
-        }
+        } 
     
     // Say-Hi fade out effect
-        if (contactScrollFraction >= 0.3) {
-            sayHiDiv.style.opacity = "0";
-            setTimeout(() => {
-                sayHiDiv.style.visibility = 'hidden'
-            }, 1500) // duration depends on sayHi transition time
+        if (contactScrollFraction >= 0.3 && sayHiFlag === false) {
+                sayHiDiv.style.opacity = "0";
+                setTimeout(() => {
+                    sayHiDiv.style.display = 'none'
+                    contactSection.classList.remove('contactStickyView')
+                    sayHiFlag = false
+                    resetPosition(getInTouchDiv)
+                }, 1000) // duration depends on sayHi transition time
         } else {
-            sayHiDiv.style.opacity = "1";
-            sayHiDiv.style.visibility = 'visible'
+            console.log ("hi!")
         }
 }
 

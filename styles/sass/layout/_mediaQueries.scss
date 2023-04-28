@@ -86,7 +86,18 @@
 // Contact Section
     section.contact {
         position: static;
+    }
 
+    .contactStickyView {
+        height: fit-content;
+    }
+
+    .sayHi {
+        display: none;
+    }
+
+    .getInTouchDiv {
+        position: static;
     }
 
 }
