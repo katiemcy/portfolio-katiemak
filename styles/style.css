@@ -1197,3 +1197,10 @@ form.contactForm p {
     margin-top: 20px;
   }
 }
+@media (max-height: 810px) {
+  .content2 {
+    position: static;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}

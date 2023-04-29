@@ -169,17 +169,19 @@ const scrollListening = () => {
         const translatePercentage2 = roundAsPercentString(translateNum2)
         ;
     
-        if (aboutScrollFraction < fractionPoint.startPoint ) {
-            content1Div.style.transform = "translateX(0)"
-            content2Div.style.transform = "translateX(150%)"
-        } else if (aboutScrollFraction >= fractionPoint.startPoint && aboutScrollFraction <= fractionPoint.endPoint) {
-            
-            content1Div.style.transform = `translateX(-${translatePercentage1})`
-            content2Div.style.transform = `translateX(${translatePercentage2})`
-    
-        } else {
-            content1Div.style.transform = "translateX(-150%)"
-            content2Div.style.transform = "translateX(0)"
+        if (window.innerHeight >= "810") {
+            if (aboutScrollFraction < fractionPoint.startPoint ) {
+                content1Div.style.transform = "translateX(0)"
+                content2Div.style.transform = "translateX(150%)"
+            } else if (aboutScrollFraction >= fractionPoint.startPoint && aboutScrollFraction <= fractionPoint.endPoint) {
+                
+                content1Div.style.transform = `translateX(-${translatePercentage1})`
+                content2Div.style.transform = `translateX(${translatePercentage2})`
+        
+            } else {
+                content1Div.style.transform = "translateX(-150%)"
+                content2Div.style.transform = "translateX(0)"
+            }
         }
         
         console.log("scrollPosition", scrollPosition);
@@ -215,7 +217,7 @@ const scrollListening = () => {
                 setTimeout(() => {
                     sayHiDiv.style.display = 'none'
                     contactSection.classList.remove('contactStickyView')
-                    sayHiFlag = false
+                    sayHiFlag = true
                     resetPosition(getInTouchDiv)
                 }, 1000) // duration depends on sayHi transition time
         } 
