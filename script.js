@@ -97,7 +97,6 @@ const scrollListening = () => {
     // header page animation
         const header = document.querySelector('header');
         const footer = document.querySelector('footer');
-        const navH2 = document.querySelector('.navH2');
 
         const headerStickyView = document.querySelector('.headerStickyView');
     
@@ -133,42 +132,7 @@ const scrollListening = () => {
             header.style.width = "100%"
         }
     // END: header page animation
-    
 
-    // Fix Say-Hi and contact form to top
-        const sayHiDiv = document.querySelector('.sayHi')
-        const getInTouchDiv = document.querySelector('.getInTouchDiv')
-        const contactSection = document.querySelector('.contact')
-
-        const maxScrollTop = contactSection.scrollHeight - window.innerHeight;
-        const contactScrollFraction = (scrollPosition - 7198) / maxScrollTop;
-
-        console.log(scrollPosition)
-    
-        const fixToTop = (element) => {
-            element.style.position = 'fixed';
-            element.style.top = '0';
-        }
-    
-        const resetPosition = (element) => {
-            element.style.position = '';
-            element.style.top = '';
-        }
-    
-        if (contactScrollFraction >= 0 && sayHiFlag === false) {
-            fixToTop(getInTouchDiv);
-        } 
-    
-    // Say-Hi fade out effect
-        if (contactScrollFraction >= 0.3 && sayHiFlag === false) {
-                sayHiDiv.style.opacity = "0";
-                setTimeout(() => {
-                    sayHiDiv.style.display = 'none'
-                    contactSection.classList.remove('contactStickyView')
-                    sayHiFlag = true
-                    resetPosition(getInTouchDiv)
-                }, 1000) // duration depends on sayHi transition time
-        } 
 }
 
 // depends on initial screen size only
