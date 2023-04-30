@@ -191,7 +191,6 @@ screenChange(x); // Call listener function at run time
 
 let addEventFlag = false;
 window.addEventListener('resize', () => {
-    const content2Div = document.querySelector('.content2');
     
     if (window.innerWidth > 768) {
         if (!navDiv.style.width) {
@@ -209,12 +208,8 @@ window.addEventListener('resize', () => {
             addEventFlag = false
             window.removeEventListener('scroll', scrollListening)
         }
-
-        content2Div.style.transform = "translateX(0)"
     }
 })
-
-
 // END: Scrolling Animations
   
 
