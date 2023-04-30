@@ -141,7 +141,9 @@ const scrollListening = () => {
         const contactSection = document.querySelector('.contact')
 
         const maxScrollTop = contactSection.scrollHeight - window.innerHeight;
-        const contactScrollFraction = (scrollPosition - 6936) / maxScrollTop;
+        const contactScrollFraction = (scrollPosition - 7198) / maxScrollTop;
+
+        console.log(scrollPosition)
     
         const fixToTop = (element) => {
             element.style.position = 'fixed';
@@ -187,7 +189,6 @@ function screenChange(x) {
   
 let x = window.matchMedia("(min-width: 768px)")
 screenChange(x); // Call listener function at run time
-
 
 let addEventFlag = false;
 window.addEventListener('resize', () => {

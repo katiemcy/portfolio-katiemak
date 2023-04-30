@@ -912,8 +912,9 @@ ul.moreSkillsUl li:not(:last-child) {
 }
 
 li.projectLi {
-  min-height: 70vh;
-  margin-bottom: 130px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid rgb(223, 223, 223);
 }
 li.projectLi .projectDemo {
   position: relative;
@@ -922,12 +923,14 @@ li.projectLi .projectDemo {
   width: fit-content;
   margin: 0 auto;
 }
+li.projectLi .projectDemo figure {
+  width: 70%;
+  margin: 0 auto;
+}
 li.projectLi .projectDemo figure img {
-  max-height: 70vh;
   margin: 0 auto;
 }
 li.projectLi .projectDemo video {
-  max-height: 70vh;
   width: 100%;
 }
 
@@ -951,8 +954,7 @@ li.projectLi .projectDemo video {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px 0;
-  border-bottom: 1px solid rgb(223, 223, 223);
+  padding: 30px 0;
 }
 .projectInfo h4 {
   margin: 0 20px 0 0;
