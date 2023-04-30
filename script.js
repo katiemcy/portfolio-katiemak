@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Hamburger Menu
-    // *** COMING SOON ***
 const hamburger = document.querySelector('.hamburger');
 const navDiv = document.querySelector('.navDiv');
 const navLinks = document.querySelectorAll('#navList li a')
@@ -79,18 +78,6 @@ navLinks.forEach(li => li.addEventListener('keydown', (event) => {
     }
 }))
 
-// special link to home/skills section
-const skillsLink = document.querySelector('.skillsLink')
-
-if (window.innerWidth > 768){
-    skillsLink.addEventListener('click', function(){
-        window.scrollTo(0, 3700);
-    })
-    skillsLink.href = "javascript:void(0)"
-} else {
-    skillsLink.href = "#skills"
-}
-
 // END: Hamburger Menu
 
 
@@ -147,55 +134,14 @@ const scrollListening = () => {
         }
     // END: header page animation
     
-    
-    // Languages & tools slide in animation
-        const aboutStickyView = document.querySelector('.aboutStickyView');
-        const aboutScrollFraction = (scrollPosition - 2500) / aboutStickyView.scrollHeight;
 
-        const content1Div = document.querySelector('.content1');
-        const content2Div = document.querySelector('.content2');
-    
-        const fractionPoint = {
-            startPoint: 0.2,
-            endPoint: 0.4
-        }
-    
-        const translateFraction =  (aboutScrollFraction - fractionPoint.startPoint) / (fractionPoint.endPoint - fractionPoint.startPoint);
-        // translateNum for content1
-        const translateNum1 = translateFraction * 150
-        // translateNum for content2 
-        const translateNum2 = ( 1 - translateFraction ) * 150;
-        const translatePercentage1 = roundAsPercentString(translateNum1);
-        const translatePercentage2 = roundAsPercentString(translateNum2)
-        ;
-    
-        if (window.innerHeight >= "810") {
-            if (aboutScrollFraction < fractionPoint.startPoint ) {
-                content1Div.style.transform = "translateX(0)"
-                content2Div.style.transform = "translateX(150%)"
-            } else if (aboutScrollFraction >= fractionPoint.startPoint && aboutScrollFraction <= fractionPoint.endPoint) {
-                
-                content1Div.style.transform = `translateX(-${translatePercentage1})`
-                content2Div.style.transform = `translateX(${translatePercentage2})`
-        
-            } else {
-                content1Div.style.transform = "translateX(-150%)"
-                content2Div.style.transform = "translateX(0)"
-            }
-        }
-        
-        console.log("scrollPosition", scrollPosition);
-
-    // // Fix Say-Hi and contact form to top
+    // Fix Say-Hi and contact form to top
         const sayHiDiv = document.querySelector('.sayHi')
-        // const contactStickyView = document.querySelector('.contactStickyView')
         const getInTouchDiv = document.querySelector('.getInTouchDiv')
         const contactSection = document.querySelector('.contact')
 
         const maxScrollTop = contactSection.scrollHeight - window.innerHeight;
-        const contactScrollFraction = (scrollPosition - 8492) / maxScrollTop;
-
-        console.log("contactScrollFraction", contactScrollFraction)
+        const contactScrollFraction = (scrollPosition - 6936) / maxScrollTop;
     
         const fixToTop = (element) => {
             element.style.position = 'fixed';
@@ -245,7 +191,6 @@ screenChange(x); // Call listener function at run time
 
 let addEventFlag = false;
 window.addEventListener('resize', () => {
-    const content2Div = document.querySelector('.content2');
     
     if (window.innerWidth > 768) {
         if (!navDiv.style.width) {
@@ -263,12 +208,8 @@ window.addEventListener('resize', () => {
             addEventFlag = false
             window.removeEventListener('scroll', scrollListening)
         }
-
-        content2Div.style.transform = "translateX(0)"
     }
 })
-
-
 // END: Scrolling Animations
   
 
