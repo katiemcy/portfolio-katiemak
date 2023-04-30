@@ -6,6 +6,10 @@
         height: auto;
     }
 // header
+    header {
+        width: 100%;
+    }
+
     div.headerStickyView {
         height: fit-content;
     }
@@ -21,7 +25,10 @@
 // About Section
     section.about {
         width: 100%;
+    }
 
+    .aboutLeftSide {
+        display: none;
     }
 
     .aboutRightSide {

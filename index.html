@@ -66,7 +66,7 @@
                         <ul id="navList">
                             <li><a href="" class="homeLink">Home</a></li>
                             <li><a href="#aboutLink">About</a></li>
-                            <li><a href="javascript:void(0)" class="skillsLink">Skills</a></li>
+                            <li><a href="#skillsLink">Skills</a></li>
                             <li><a href="#projectLink">Projects</a></li>
                             <li><a href="#contactLink">Contact</a></li>
                         </ul>
@@ -78,53 +78,47 @@
     </div>
 
     <main>
-        <section class="aboutStickyView" id="aboutLink">
-            <div class="aboutSticky aboutFlex">
-                <div class="aboutLeftSide">
-                    <!-- about me picture -->
-                </div>
-        
-                <section class="about">
-                    <div class="aboutRightSide">
-                        <div class="aboutTitle">
-                            <h3>About Me</h3>
-                            <h4>Katie Mak</h4>
-                            <p>Front End Developer 👩🏻‍💻</p>
-                        </div>
-                        <div class="content1 contentSticky">
-                            <p class="aboutText">Hi, I'm Katie and I've found my latest passion in creating web applications that are interactive and responsive. I get excited by hearing creative ideas and love bringing them to life by turning them into tangible products. My favourite part in coding is coming up with innovative solutions to complex problems.</p>
-                            <p class="aboutText">When not in front of the computer, I can be found exploring new hobbies and learning new things. Running and playing games are some of my favourite activities. With my curiosity and drive, I'm ready to make a lasting impact in the world of web development.</p>    
-                            <!-- <ul class="aboutMeUl">
-                                <li>Cat mom of 3</li>
-                                <li>Have over 4250<span>cat pics in her phone</span></li>
-                                <li>Played 650<span>hours of Animal Crossing</span></li>
-                            </ul> -->
-                        </div>
-                        
-                        <div class="content2" id="skills">
-                            <h4>Languages & Tools</h4>
-                            <ul class="skillIcons">
-                                <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="React icon"/> </li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Javascript icon"/></li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" alt="Git icon"/></li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase icon"/></li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML5 icon"/></li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS icon"/></li>
-                                <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS icon"/></li>
-                                <li class="andMoreLi">... and more
-                                    <ul class="moreSkillsUl">
-                                        <li>Pair Programming</li>
-                                        <li>API call</li>
-                                        <li>Version Control</li>
-                                        <li>Responsive Design</li>
-                                        <li>Team-based Development</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+        <section class="aboutFlex" id="aboutLink">
+            <div class="aboutLeftSide aboutSticky">
+                <!-- about me picture -->
             </div>
+    
+            <section class="about">
+                <div class="aboutRightSide">
+                    <div class="aboutTitle ">
+                        <h3>About Me</h3>
+                        <h4>Katie Mak</h4>
+                        <p>Front End Developer 👩🏻‍💻</p>
+                    </div>
+
+                    <div class="content1">
+                        <p class="aboutText">Hi, I'm Katie and I've found my latest passion in creating web applications that are interactive and responsive. I get excited by hearing creative ideas and love bringing them to life by turning them into tangible products. My favourite part in coding is coming up with innovative solutions to complex problems.</p>
+                        <p class="aboutText">When not in front of the computer, I can be found exploring new hobbies and learning new things. Running and playing games are some of my favourite activities. With my curiosity and drive, I'm ready to make a lasting impact in the world of web development.</p>
+                    </div>
+                    
+                    <div class="content2" id="skillsLink">
+                        <h4>Languages & Tools</h4>
+                        <ul class="skillIcons">
+                            <li> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="React icon"/> </li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Javascript icon"/></li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" alt="Git icon"/></li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase icon"/></li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML5 icon"/></li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS icon"/></li>
+                            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS icon"/></li>
+                            <li class="andMoreLi">... and more
+                                <ul class="moreSkillsUl">
+                                    <li>Pair Programming</li>
+                                    <li>API call</li>
+                                    <li>Version Control</li>
+                                    <li>Responsive Design</li>
+                                    <li>Team-based Development</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
     
         <section class="projects" id="projectLink">
@@ -132,21 +126,21 @@
                 <h3 class="projectH3">Projects</h3>
                 <ul>
                     <li class="projectLi">
+                        <div class="projectInfo">
+                            <h4>Moon Child</h4>
+                            <ul class="techList">
+                                <li>React</li>
+                                <li>Javascript</li>
+                                <li>API</li>
+                                <li>HTML</li>
+                                <li>CSS & SASS</li>
+                            </ul>
+                        </div>
                         <div class="projectDemo">
                             <!-- <video muted loop><source src="./media/track-mate-demo.MP4"></video> -->
                             <figure><img src="./media/moon-child.JPG" alt="screenshot of Moon Child web application"></figure>
                         </div>
                         <div class="projectWrapper">
-                            <div class="projectInfo">
-                                <h4>Moon Child</h4>
-                                <ul class="techList">
-                                    <li>React</li>
-                                    <li>Javascript</li>
-                                    <li>API</li>
-                                    <li>HTML</li>
-                                    <li>CSS & SASS</li>
-                                </ul>
-                            </div>
                             <p>Moon Child is a React application which takes in a date and returns the moon phase of that day via WeatherAPI.</p>
                             <h5>Features:</h5>
                             <ul class ="featureList">
@@ -188,21 +182,21 @@
                         </div>
                     </li>
                     <li class="projectLi">
+                        <div class="projectInfo">
+                            <h4>TrackMate</h4>
+                            <ul class="techList">
+                                <li>Pair Programming</li>
+                                <li>Javascript</li>
+                                <li>Firebase</li>
+                                <li>HTML</li>
+                                <li>CSS & SASS</li>
+                            </ul>
+                        </div>
                         <div class="projectDemo">
                             <!-- <video muted loop><source src="./media/track-mate-demo.MP4" alt="demo of TrackMate web application"></video> -->
                             <figure><img src="./media/track-mate.jpg" alt="screenshot of TrackMate web application"></figure>
                         </div>
                         <div class="projectWrapper">
-                            <div class="projectInfo">
-                                <h4>TrackMate</h4>
-                                <ul class="techList">
-                                    <li>Pair Programming</li>
-                                    <li>Javascript</li>
-                                    <li>Firebase</li>
-                                    <li>HTML</li>
-                                    <li>CSS & SASS</li>
-                                </ul>
-                            </div>
                             <p>TrackMate is a task tracker application, created in collaboration with Selda Erkilic</p>
                             <h5>Features:</h5>
                             <ul class="featureList">

@@ -11,11 +11,24 @@ div.headerStickyView {
 }
 
 .aboutStickyView {
+    position: relative;
     height: 2800px;
     width: 100%;
     // transform: translateY(-$aboutTop);
 
-    .aboutSticky {                          
+}
+
+.aboutSticky {                          
+    position: sticky;
+    top: 0;
+}
+
+.contentStickyView {
+    position: sticky;
+    height: 2000px;
+    width: 100%;
+
+    .contentSticky {
         position: sticky;
         top: 0;
     }
